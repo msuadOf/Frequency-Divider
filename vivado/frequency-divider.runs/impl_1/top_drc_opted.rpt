@@ -1,0 +1,69 @@
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Wed Oct 26 07:31:22 2022
+| Host         : ubuntu running 64-bit Ubuntu 20.04.5 LTS
+| Command      : report_drc -file top_drc_opted.rpt -pb top_drc_opted.pb -rpx top_drc_opted.rpx
+| Design       : top
+| Device       : xc7a35tcpg236-1
+| Speed File   : -1
+| Design State : Synthesized
+------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max violations: <unlimited>
+             Violations found: 3
++-------------+----------+-------------------------------------------------------------+------------+
+| Rule        | Severity | Description                                                 | Violations |
++-------------+----------+-------------------------------------------------------------+------------+
+| CFGBVS-1    | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties         | 1          |
+| PLHOLDVIO-2 | Warning  | Non-Optimal connections which could lead to hold violations | 2          |
++-------------+----------+-------------------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+CFGBVS-1#1 Warning
+Missing CFGBVS and CONFIG_VOLTAGE Design Properties  
+Neither the CFGBVS nor CONFIG_VOLTAGE voltage property is set in the current_design.  Configuration bank voltage select (CFGBVS) must be set to VCCO or GND, and CONFIG_VOLTAGE must be set to the correct configuration voltage, in order to determine the I/O voltage support for the pins in bank 0.  It is suggested to specify these either using the 'Edit Device Properties' function in the GUI or directly in the XDC file using the following syntax:
+
+ set_property CFGBVS value1 [current_design]
+ #where value1 is either VCCO or GND
+
+ set_property CONFIG_VOLTAGE value2 [current_design]
+ #where value2 is the voltage provided to configuration bank 0
+
+Refer to the device configuration user guide for more information.
+Related violations: <none>
+
+PLHOLDVIO-2#1 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT clk_tree_0/clk_277Hz/o_debugled_i_1 is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+filter_wraper_0/o_debugled_reg
+Related violations: <none>
+
+PLHOLDVIO-2#2 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT clk_tree_0/clk_5MHz/Data_State[4]_i_2 is driving clock pin of 16 cells. This could lead to large hold time violations. Involved cells are:
+spi_master_0/Data_State_reg[0], spi_master_0/Data_State_reg[1],
+spi_master_0/Data_State_reg[2], spi_master_0/Data_State_reg[3],
+spi_master_0/Data_State_reg[4], spi_master_0/o_cs_reg,
+spi_master_0/o_sck_reg, spi_master_0/o_tx_ch1_reg,
+spi_master_1/Data_State_reg[0], spi_master_1/Data_State_reg[1],
+spi_master_1/Data_State_reg[2], spi_master_1/Data_State_reg[3],
+spi_master_1/Data_State_reg[4], spi_master_1/o_cs_reg,
+spi_master_1/o_sck_reg (the first 15 of 16 listed)
+Related violations: <none>
+
+

@@ -1,0 +1,288 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Wed Oct 26 07:24:58 2022
+# Process ID: 55474
+# Current directory: /home/zz/xilinx/frequency-divider/vivado/frequency-divider.runs/synth_1
+# Command line: vivado -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+# Log file: /home/zz/xilinx/frequency-divider/vivado/frequency-divider.runs/synth_1/top.vds
+# Journal file: /home/zz/xilinx/frequency-divider/vivado/frequency-divider.runs/synth_1/vivado.jou
+# Running On: ubuntu, OS: Linux, CPU Frequency: 3600.111 MHz, CPU Physical cores: 12, Host memory: 8300 MB
+#-----------------------------------------------------------
+source top.tcl -notrace
+Command: read_checkpoint -auto_incremental -incremental /home/zz/xilinx/frequency-divider/vivado/frequency-divider.srcs/utils_1/imports/synth_1/top.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from /home/zz/xilinx/frequency-divider/vivado/frequency-divider.srcs/utils_1/imports/synth_1/top.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top top -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+WARNING: [Designutils 20-4072] Reference run did not run incremental synthesis because the design is too small; reverting to default synthesis
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 55502
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2607.188 ; gain = 0.000 ; free physical = 436 ; free virtual = 4334
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top' [/home/zz/xilinx/frequency-divider/src/rtl/top.v:1]
+INFO: [Synth 8-6157] synthesizing module 'ad_9226' [/home/zz/xilinx/frequency-divider/src/rtl/ad9226/ad_9226.v:24]
+INFO: [Synth 8-6157] synthesizing module 'ad9226_driver' [/home/zz/xilinx/frequency-divider/src/rtl/ad9226/ad9226_driver.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ad9226_driver' (1#1) [/home/zz/xilinx/frequency-divider/src/rtl/ad9226/ad9226_driver.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ad_9226' (2#1) [/home/zz/xilinx/frequency-divider/src/rtl/ad9226/ad_9226.v:24]
+INFO: [Synth 8-6157] synthesizing module 'clk_tree' [/home/zz/xilinx/frequency-divider/src/rtl/clk_tree.v:1]
+INFO: [Synth 8-6157] synthesizing module 'clk_div' [/home/zz/xilinx/frequency-divider/src/rtl/clk_div.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'clk_div' (3#1) [/home/zz/xilinx/frequency-divider/src/rtl/clk_div.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'clk_tree' (4#1) [/home/zz/xilinx/frequency-divider/src/rtl/clk_tree.v:1]
+INFO: [Synth 8-6157] synthesizing module 'connect' [/home/zz/xilinx/frequency-divider/src/rtl/connect.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'connect' (5#1) [/home/zz/xilinx/frequency-divider/src/rtl/connect.v:1]
+INFO: [Synth 8-6157] synthesizing module 'filter_wraper' [/home/zz/xilinx/frequency-divider/src/rtl/filter_wraper.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'filter_wraper' (6#1) [/home/zz/xilinx/frequency-divider/src/rtl/filter_wraper.v:1]
+INFO: [Synth 8-6157] synthesizing module 'spi_master' [/home/zz/xilinx/frequency-divider/src/rtl/spi/spi_master.v:2]
+WARNING: [Synth 8-7137] Register Data_State_reg in module spi_master has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/zz/xilinx/frequency-divider/src/rtl/spi/spi_master.v:47]
+INFO: [Synth 8-6155] done synthesizing module 'spi_master' (7#1) [/home/zz/xilinx/frequency-divider/src/rtl/spi/spi_master.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'top' (8#1) [/home/zz/xilinx/frequency-divider/src/rtl/top.v:1]
+WARNING: [Synth 8-7129] Port i_da9226_data[12] in module ad9226_driver is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_da9226_data[11] in module ad9226_driver is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_da9226_data[10] in module ad9226_driver is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_da9226_data[9] in module ad9226_driver is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_da9226_data[8] in module ad9226_driver is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_da9226_data[7] in module ad9226_driver is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_da9226_data[6] in module ad9226_driver is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_da9226_data[5] in module ad9226_driver is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_da9226_data[4] in module ad9226_driver is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_da9226_data[3] in module ad9226_driver is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_da9226_data[2] in module ad9226_driver is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_da9226_data[1] in module ad9226_driver is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2607.188 ; gain = 0.000 ; free physical = 388 ; free virtual = 4287
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2607.188 ; gain = 0.000 ; free physical = 1248 ; free virtual = 5148
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2607.188 ; gain = 0.000 ; free physical = 1248 ; free virtual = 5148
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2607.188 ; gain = 0.000 ; free physical = 1264 ; free virtual = 5163
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/zz/xilinx/frequency-divider/src/pin_con/ad9226_pin.xdc]
+Finished Parsing XDC File [/home/zz/xilinx/frequency-divider/src/pin_con/ad9226_pin.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/zz/xilinx/frequency-divider/src/pin_con/ad9226_pin.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/zz/xilinx/frequency-divider/src/pin_con/spi_pin.xdc]
+Finished Parsing XDC File [/home/zz/xilinx/frequency-divider/src/pin_con/spi_pin.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/zz/xilinx/frequency-divider/src/pin_con/spi_pin.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/zz/xilinx/frequency-divider/src/pin_con/startspeedup.xdc]
+Finished Parsing XDC File [/home/zz/xilinx/frequency-divider/src/pin_con/startspeedup.xdc]
+Parsing XDC File [/home/zz/xilinx/frequency-divider/src/pin_con/top_pins.xdc]
+WARNING: [Vivado 12-584] No ports matched 'spi_data_2_high_data'. [/home/zz/xilinx/frequency-divider/src/pin_con/top_pins.xdc:8]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/zz/xilinx/frequency-divider/src/pin_con/top_pins.xdc:8]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [/home/zz/xilinx/frequency-divider/src/pin_con/top_pins.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/zz/xilinx/frequency-divider/src/pin_con/top_pins.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2671.156 ; gain = 0.000 ; free physical = 1230 ; free virtual = 5129
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2671.156 ; gain = 0.000 ; free physical = 1230 ; free virtual = 5129
+WARNING: [Designutils 20-4072] Reference run did not run incremental synthesis because the design is too small; reverting to default synthesis
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2671.156 ; gain = 63.969 ; free physical = 1290 ; free virtual = 5189
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2671.156 ; gain = 63.969 ; free physical = 1290 ; free virtual = 5189
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2671.156 ; gain = 63.969 ; free physical = 1293 ; free virtual = 5192
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2671.156 ; gain = 63.969 ; free physical = 1285 ; free virtual = 5185
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 1     
+	   2 Input    5 Bit       Adders := 2     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               13 Bit    Registers := 1     
+	                5 Bit    Registers := 2     
+	                1 Bit    Registers := 10    
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 1     
+	  11 Input    5 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 5     
+	   3 Input    1 Bit        Muxes := 1     
+	  11 Input    1 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7129] Port i_da9226_data_1[12] in module top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_da9226_data_1[11] in module top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_da9226_data_1[10] in module top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_da9226_data_1[9] in module top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_da9226_data_1[8] in module top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_da9226_data_1[7] in module top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_da9226_data_1[6] in module top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_da9226_data_1[5] in module top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_da9226_data_1[4] in module top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_da9226_data_1[3] in module top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_da9226_data_1[2] in module top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_da9226_data_1[1] in module top is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2671.156 ; gain = 63.969 ; free physical = 1271 ; free virtual = 5175
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2671.156 ; gain = 63.969 ; free physical = 1151 ; free virtual = 5054
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2671.156 ; gain = 63.969 ; free physical = 1151 ; free virtual = 5054
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2671.156 ; gain = 63.969 ; free physical = 1149 ; free virtual = 5052
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2671.156 ; gain = 63.969 ; free physical = 1149 ; free virtual = 5052
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2671.156 ; gain = 63.969 ; free physical = 1149 ; free virtual = 5052
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2671.156 ; gain = 63.969 ; free physical = 1149 ; free virtual = 5052
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2671.156 ; gain = 63.969 ; free physical = 1149 ; free virtual = 5052
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2671.156 ; gain = 63.969 ; free physical = 1149 ; free virtual = 5052
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2671.156 ; gain = 63.969 ; free physical = 1149 ; free virtual = 5052
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     2|
+|2     |CARRY4 |    15|
+|3     |LUT1   |     2|
+|4     |LUT2   |    14|
+|5     |LUT3   |     8|
+|6     |LUT4   |    15|
+|7     |LUT5   |    44|
+|8     |LUT6   |     8|
+|9     |FDCE   |    63|
+|10    |FDPE   |     2|
+|11    |FDRE   |    10|
+|12    |IBUF   |     3|
+|13    |OBUF   |    10|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2671.156 ; gain = 63.969 ; free physical = 1149 ; free virtual = 5052
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 13 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2671.156 ; gain = 0.000 ; free physical = 1200 ; free virtual = 5104
+Synthesis Optimization Complete : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2671.156 ; gain = 63.969 ; free physical = 1200 ; free virtual = 5104
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2671.156 ; gain = 0.000 ; free physical = 1290 ; free virtual = 5194
+INFO: [Netlist 29-17] Analyzing 15 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2671.156 ; gain = 0.000 ; free physical = 1227 ; free virtual = 5131
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: 54f295ef
+INFO: [Common 17-83] Releasing license: Synthesis
+37 Infos, 29 Warnings, 1 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:21 . Memory (MB): peak = 2671.156 ; gain = 64.031 ; free physical = 1433 ; free virtual = 5336
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+INFO: [Common 17-1381] The checkpoint '/home/zz/xilinx/frequency-divider/vivado/frequency-divider.runs/synth_1/top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Oct 26 07:25:29 2022...

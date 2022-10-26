@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Oct 26 06:33:35 2022" VIVADOVERSION="2021.2">
+
+  <SYSTEMINFO ARCH="artix7" DEVICE="7a35t" NAME="top" PACKAGE="cpg236" SPEEDGRADE="-1"/>
+
+  <EXTERNALPORTS>
+    <PORT DIR="O" NAME="o_sck_0" SIGIS="undef" SIGNAME="spi_master_0_o_sck">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="spi_master_0" PORT="o_sck"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="o_cs_0" SIGIS="undef" SIGNAME="spi_master_0_o_cs">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="spi_master_0" PORT="o_cs"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="o_tx_ch1_0" SIGIS="undef" SIGNAME="spi_master_0_o_tx_ch1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="spi_master_0" PORT="o_tx_ch1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="o_tx_ch2_0" SIGIS="undef" SIGNAME="spi_master_0_o_tx_ch2">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="spi_master_0" PORT="o_tx_ch2"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="o_sck_1" SIGIS="undef" SIGNAME="spi_master_1_o_sck">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="spi_master_1" PORT="o_sck"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="o_cs_1" SIGIS="undef" SIGNAME="spi_master_1_o_cs">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="spi_master_1" PORT="o_cs"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="o_tx_ch1_1" SIGIS="undef" SIGNAME="spi_master_1_o_tx_ch1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="spi_master_1" PORT="o_tx_ch1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="o_tx_ch2_1" SIGIS="undef" SIGNAME="spi_master_1_o_tx_ch2">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="spi_master_1" PORT="o_tx_ch2"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="12" NAME="i_da9226_data_1" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_i_da9226_data_1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ad_9226_0" PORT="i_da9226_data"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="sys_clk_0" SIGIS="clk" SIGNAME="External_Ports_sys_clk_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="clk_tree_0" PORT="sys_clk"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="o_debugled_0" SIGIS="undef" SIGNAME="filter_wraper_0_o_debugled">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="filter_wraper_0" PORT="o_debugled"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="o_clk_driver_0" SIGIS="undef" SIGNAME="ad_9226_0_o_clk_driver">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ad_9226_0" PORT="o_clk_driver"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="i_rst_n_0" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_i_rst_n_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="connect_0" PORT="i_rst_n"/>
+      </CONNECTIONS>
+    </PORT>
+  </EXTERNALPORTS>
+
+  <EXTERNALINTERFACES/>
+
+  <MODULES>
+    <MODULE COREREVISION="1" FULLNAME="/ad_9226_0" HWVERSION="1.0" INSTANCE="ad_9226_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="ad_9226" VLNV="xilinx.com:module_ref:ad_9226:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="top_ad_9226_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="sys_clk" SIGIS="clk" SIGNAME="clk_tree_0_o_clk_1100kHz">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_tree_0" PORT="o_clk_1100kHz"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="sys_rst_n" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="connect_0_o_rst_n">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="connect_0" PORT="o_rst_n"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="o_clk_driver" SIGIS="undef" SIGNAME="ad_9226_0_o_clk_driver">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="o_clk_driver_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="12" NAME="i_da9226_data" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_i_da9226_data_1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="i_da9226_data_1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="ADC_Data" RIGHT="0" SIGIS="undef" SIGNAME="ad_9226_0_ADC_Data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="filter_wraper_0" PORT="i_filter_datain"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/clk_tree_0" HWVERSION="1.0" INSTANCE="clk_tree_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="clk_tree" VLNV="xilinx.com:module_ref:clk_tree:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="top_clk_tree_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="sys_clk" SIGIS="clk" SIGNAME="External_Ports_sys_clk_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="sys_clk_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="sys_rst_n" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="connect_0_o_rst_n">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="connect_0" PORT="o_rst_n"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="o_clk_5MHz" SIGIS="undef" SIGNAME="clk_tree_0_o_clk_5MHz">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="spi_master_1" PORT="sys_clk"/>
+            <CONNECTION INSTANCE="spi_master_0" PORT="sys_clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="o_clk_277kHz" SIGIS="undef" SIGNAME="clk_tree_0_o_clk_277kHz">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="filter_wraper_0" PORT="sys_clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="o_clk_1100kHz" SIGIS="undef" SIGNAME="clk_tree_0_o_clk_1100kHz">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ad_9226_0" PORT="sys_clk"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/connect_0" HWVERSION="1.0" INSTANCE="connect_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="connect" VLNV="xilinx.com:module_ref:connect:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="top_connect_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="i_rst_n" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_i_rst_n_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="i_rst_n_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="o_rst_n" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="connect_0_o_rst_n">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="spi_master_1" PORT="sys_rst_n"/>
+            <CONNECTION INSTANCE="spi_master_0" PORT="sys_rst_n"/>
+            <CONNECTION INSTANCE="clk_tree_0" PORT="sys_rst_n"/>
+            <CONNECTION INSTANCE="ad_9226_0" PORT="sys_rst_n"/>
+            <CONNECTION INSTANCE="filter_wraper_0" PORT="sys_rst_n"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/filter_wraper_0" HWVERSION="1.0" INSTANCE="filter_wraper_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="filter_wraper" VLNV="xilinx.com:module_ref:filter_wraper:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="top_filter_wraper_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="sys_clk" SIGIS="clk" SIGNAME="clk_tree_0_o_clk_277kHz">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_tree_0" PORT="o_clk_277kHz"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="sys_rst_n" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="connect_0_o_rst_n">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="connect_0" PORT="o_rst_n"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="i_filter_datain" RIGHT="0" SIGIS="undef" SIGNAME="ad_9226_0_ADC_Data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ad_9226_0" PORT="ADC_Data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="o_debugled" SIGIS="undef" SIGNAME="filter_wraper_0_o_debugled">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="o_debugled_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="15" NAME="o_hpf_16bit" RIGHT="0" SIGIS="undef" SIGNAME="filter_wraper_0_o_hpf_16bit">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="spi_master_0" PORT="i_send_data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="15" NAME="o_lpf_16bit" RIGHT="0" SIGIS="undef" SIGNAME="filter_wraper_0_o_lpf_16bit">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="spi_master_1" PORT="i_send_data"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/spi_master_0" HWVERSION="1.0" INSTANCE="spi_master_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="spi_master" VLNV="xilinx.com:module_ref:spi_master:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="D7_State" VALUE="&quot;00000&quot;"/>
+        <PARAMETER NAME="D6_State" VALUE="&quot;00010&quot;"/>
+        <PARAMETER NAME="D5_State" VALUE="&quot;00100&quot;"/>
+        <PARAMETER NAME="D4_State" VALUE="&quot;00110&quot;"/>
+        <PARAMETER NAME="D3_State" VALUE="&quot;01000&quot;"/>
+        <PARAMETER NAME="D2_State" VALUE="&quot;01010&quot;"/>
+        <PARAMETER NAME="D1_State" VALUE="&quot;01100&quot;"/>
+        <PARAMETER NAME="D0_State" VALUE="&quot;01110&quot;"/>
+        <PARAMETER NAME="CS_State" VALUE="&quot;10000&quot;"/>
+        <PARAMETER NAME="Component_Name" VALUE="top_spi_master_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="sys_clk" SIGIS="clk" SIGNAME="clk_tree_0_o_clk_5MHz">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_tree_0" PORT="o_clk_5MHz"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="sys_rst_n" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="connect_0_o_rst_n">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="connect_0" PORT="o_rst_n"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="o_sck" SIGIS="undef" SIGNAME="spi_master_0_o_sck">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="o_sck_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="o_cs" SIGIS="undef" SIGNAME="spi_master_0_o_cs">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="o_cs_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="o_tx_ch1" SIGIS="undef" SIGNAME="spi_master_0_o_tx_ch1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="o_tx_ch1_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="o_tx_ch2" SIGIS="undef" SIGNAME="spi_master_0_o_tx_ch2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="o_tx_ch2_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="15" NAME="i_send_data" RIGHT="0" SIGIS="undef" SIGNAME="filter_wraper_0_o_hpf_16bit">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="filter_wraper_0" PORT="o_hpf_16bit"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/spi_master_1" HWVERSION="1.0" INSTANCE="spi_master_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="spi_master" VLNV="xilinx.com:module_ref:spi_master:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="D7_State" VALUE="&quot;00000&quot;"/>
+        <PARAMETER NAME="D6_State" VALUE="&quot;00010&quot;"/>
+        <PARAMETER NAME="D5_State" VALUE="&quot;00100&quot;"/>
+        <PARAMETER NAME="D4_State" VALUE="&quot;00110&quot;"/>
+        <PARAMETER NAME="D3_State" VALUE="&quot;01000&quot;"/>
+        <PARAMETER NAME="D2_State" VALUE="&quot;01010&quot;"/>
+        <PARAMETER NAME="D1_State" VALUE="&quot;01100&quot;"/>
+        <PARAMETER NAME="D0_State" VALUE="&quot;01110&quot;"/>
+        <PARAMETER NAME="CS_State" VALUE="&quot;10000&quot;"/>
+        <PARAMETER NAME="Component_Name" VALUE="top_spi_master_0_1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="sys_clk" SIGIS="clk" SIGNAME="clk_tree_0_o_clk_5MHz">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_tree_0" PORT="o_clk_5MHz"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="sys_rst_n" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="connect_0_o_rst_n">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="connect_0" PORT="o_rst_n"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="o_sck" SIGIS="undef" SIGNAME="spi_master_1_o_sck">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="o_sck_1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="o_cs" SIGIS="undef" SIGNAME="spi_master_1_o_cs">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="o_cs_1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="o_tx_ch1" SIGIS="undef" SIGNAME="spi_master_1_o_tx_ch1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="o_tx_ch1_1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="o_tx_ch2" SIGIS="undef" SIGNAME="spi_master_1_o_tx_ch2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="o_tx_ch2_1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="15" NAME="i_send_data" RIGHT="0" SIGIS="undef" SIGNAME="filter_wraper_0_o_lpf_16bit">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="filter_wraper_0" PORT="o_lpf_16bit"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+  </MODULES>
+
+</EDKSYSTEM>

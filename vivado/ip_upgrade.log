@@ -1,0 +1,357 @@
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Tue Oct 25 23:19:03 2022
+| Host         : ubuntu running 64-bit Ubuntu 20.04.5 LTS
+| Command      : upgrade_ip
+| Device       : xc7a35tcpg236-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'fir_low_150_in277777_2k'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of fir_low_150_in277777_2k (xilinx.com:ip:fir_compiler:7.2) from (Rev. 18) to (Rev. 17)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Warnings
+-----------
+
+WARNING: The upgraded user parameter set contained parameters that could not be mapped on to the upgraded IP. When checking the upgrade script, note that parameter names are case sensitive.
+
+
+3. Interface Information
+------------------------
+
+Detected external interface differences while upgrading 'fir_low_150_in277777_2k'.
+
+
+-Upgrade has added interface 'M_AXIS_DATA' (xilinx.com:interface:axis:1.0)
+
+-Upgrade has added interface 'S_AXIS_DATA' (xilinx.com:interface:axis:1.0)
+
+-Upgrade has added interface 'aclk_intf' (xilinx.com:signal:clock:1.0)
+
+-Upgrade has added interface 'aclken_intf' (xilinx.com:signal:clockenable:1.0)
+
+-Upgrade has added interface 'aresetn_intf' (xilinx.com:signal:reset:1.0)
+
+-Upgrade has added interface 'event_s_config_tlast_missing_intf' (xilinx.com:signal:interrupt:1.0)
+
+-Upgrade has added interface 'event_s_config_tlast_unexpected_intf' (xilinx.com:signal:interrupt:1.0)
+
+-Upgrade has added interface 'event_s_data_chanid_incorrect_intf' (xilinx.com:signal:interrupt:1.0)
+
+-Upgrade has added interface 'event_s_data_tlast_missing_intf' (xilinx.com:signal:interrupt:1.0)
+
+-Upgrade has added interface 'event_s_data_tlast_unexpected_intf' (xilinx.com:signal:interrupt:1.0)
+
+-Upgrade has added interface 'event_s_reload_tlast_missing_intf' (xilinx.com:signal:interrupt:1.0)
+
+-Upgrade has added interface 'event_s_reload_tlast_unexpected_intf' (xilinx.com:signal:interrupt:1.0)
+
+
+4. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'fir_low_150_in277777_2k'. These changes may impact your design.
+
+
+-Upgrade has added port 'aclk'
+
+-Upgrade has added port 'm_axis_data_tdata'
+
+-Upgrade has added port 'm_axis_data_tvalid'
+
+-Upgrade has added port 's_axis_data_tdata'
+
+-Upgrade has added port 's_axis_data_tready'
+
+-Upgrade has added port 's_axis_data_tvalid'
+
+
+5. Customization warnings
+-------------------------
+
+The normal upgrade process failed due to validation failures in the given configuration. Attempting partial upgrade to set as many user parameters as possible. Please check the parameters whose values were not applied.
+
+Customization errors found on 'fir_low_150_in277777_2k'. Restoring to previous valid configuration.
+
+
+6. Debug Commands
+-----------------
+
+  The following debug information can be passed to Vivado as Tcl commands,
+in order to validate or debug the output of the upgrade flow.
+  You may consult any warnings from within this upgrade, and alter or remove
+the configuration parameter(s) which caused the warning; then execute the Tcl
+commands, and use the IP Customization GUI to verify the IP configuration.
+
+create_ip -vlnv xilinx.com:ip:fir_compiler:7.2 -user_name fir_low_150_in277777_2k
+set_property -dict "\
+  CONFIG.BestPrecision {false} \
+  CONFIG.Blank_Output {false} \
+  CONFIG.Channel_Sequence {Basic} \
+  CONFIG.Clock_Frequency {0.2777777777777777777} \
+  CONFIG.CoefficientSource {COE_File} \
+  CONFIG.CoefficientVector {6,0,-4,-3,5,6,-6,-13,7,44,64,44,7,-13,-6,6,5,-3,-4,0,6} \
+  CONFIG.Coefficient_Buffer_Type {Automatic} \
+  CONFIG.Coefficient_Fanout {false} \
+  CONFIG.Coefficient_File {../../../../../0_filter_design/low_150_in277777_2000.coe} \
+  CONFIG.Coefficient_Fractional_Bits {0} \
+  CONFIG.Coefficient_Reload {false} \
+  CONFIG.Coefficient_Sets {1} \
+  CONFIG.Coefficient_Sign {Signed} \
+  CONFIG.Coefficient_Structure {Inferred} \
+  CONFIG.Coefficient_Width {16} \
+  CONFIG.ColumnConfig {60,16} \
+  CONFIG.Component_Name {fir_low_150_in277777_2k} \
+  CONFIG.Control_Broadcast_Fanout {false} \
+  CONFIG.Control_Column_Fanout {false} \
+  CONFIG.Control_LUT_Pipeline {false} \
+  CONFIG.Control_Path_Fanout {false} \
+  CONFIG.DATA_Has_TLAST {Not_Required} \
+  CONFIG.DATA_TUSER_Width {1} \
+  CONFIG.Data_Buffer_Type {Automatic} \
+  CONFIG.Data_Fractional_Bits {0} \
+  CONFIG.Data_Path_Broadcast {false} \
+  CONFIG.Data_Path_Fanout {false} \
+  CONFIG.Data_Sign {Unsigned} \
+  CONFIG.Data_Width {12} \
+  CONFIG.Decimation_Rate {1} \
+  CONFIG.Disable_Half_Band_Centre_Tap {false} \
+  CONFIG.DisplayReloadOrder {false} \
+  CONFIG.Filter_Architecture {Systolic_Multiply_Accumulate} \
+  CONFIG.Filter_Selection {1} \
+  CONFIG.Filter_Type {Single_Rate} \
+  CONFIG.GUI_Behaviour {Coregen} \
+  CONFIG.Gen_MIF_Files {false} \
+  CONFIG.Gen_MIF_from_COE {false} \
+  CONFIG.Gen_MIF_from_Spec {false} \
+  CONFIG.HardwareOversamplingRate {1} \
+  CONFIG.Has_ACLKEN {false} \
+  CONFIG.Has_ARESETn {false} \
+  CONFIG.Input_Buffer_Type {Automatic} \
+  CONFIG.Inter_Column_Pipe_Length {4} \
+  CONFIG.Interpolation_Rate {1} \
+  CONFIG.M_DATA_Has_TREADY {false} \
+  CONFIG.M_DATA_Has_TUSER {Not_Required} \
+  CONFIG.Multi_Column_Support {Automatic} \
+  CONFIG.No_BRAM_Read_First_Mode {false} \
+  CONFIG.No_SRL_Attributes {false} \
+  CONFIG.Num_Reload_Slots {1} \
+  CONFIG.Number_Channels {1} \
+  CONFIG.Number_Paths {1} \
+  CONFIG.Optimal_Column_Lengths {false} \
+  CONFIG.Optimization_Goal {Area} \
+  CONFIG.Optimization_List {None} \
+  CONFIG.Optimization_Selection {None} \
+  CONFIG.Other {false} \
+  CONFIG.Output_Buffer_Type {Automatic} \
+  CONFIG.Output_Rounding_Mode {Full_Precision} \
+  CONFIG.Output_Width {34} \
+  CONFIG.Passband_Max {0.5} \
+  CONFIG.Passband_Min {0.0} \
+  CONFIG.Pattern_List {P4-0,P4-1,P4-2,P4-3,P4-4} \
+  CONFIG.Pre_Adder_Pipeline {false} \
+  CONFIG.Preference_For_Other_Storage {Automatic} \
+  CONFIG.Quantization {Integer_Coefficients} \
+  CONFIG.RateSpecification {Frequency_Specification} \
+  CONFIG.Rate_Change_Type {Integer} \
+  CONFIG.Reload_File {no_coe_file_loaded} \
+  CONFIG.Reset_Data_Vector {true} \
+  CONFIG.S_CONFIG_Method {Single} \
+  CONFIG.S_CONFIG_Sync_Mode {On_Vector} \
+  CONFIG.S_DATA_Has_FIFO {true} \
+  CONFIG.S_DATA_Has_TUSER {Not_Required} \
+  CONFIG.SamplePeriod {1} \
+  CONFIG.Sample_Frequency {0.2777777777777777777} \
+  CONFIG.Select_Pattern {All} \
+  CONFIG.Stopband_Max {1.0} \
+  CONFIG.Stopband_Min {0.5} \
+  CONFIG.Zero_Pack_Factor {1} " [get_ips fir_low_150_in277777_2k]
+
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Tue Oct 25 23:16:06 2022
+| Host         : ubuntu running 64-bit Ubuntu 20.04.5 LTS
+| Command      : upgrade_ip
+| Device       : xc7a35tcpg236-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'fir_150_in277777_2k'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of fir_150_in277777_2k (xilinx.com:ip:fir_compiler:7.2) from (Rev. 18) to (Rev. 17)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Warnings
+-----------
+
+WARNING: The upgraded user parameter set contained parameters that could not be mapped on to the upgraded IP. When checking the upgrade script, note that parameter names are case sensitive.
+
+
+3. Interface Information
+------------------------
+
+Detected external interface differences while upgrading 'fir_150_in277777_2k'.
+
+
+-Upgrade has added interface 'M_AXIS_DATA' (xilinx.com:interface:axis:1.0)
+
+-Upgrade has added interface 'S_AXIS_DATA' (xilinx.com:interface:axis:1.0)
+
+-Upgrade has added interface 'aclk_intf' (xilinx.com:signal:clock:1.0)
+
+-Upgrade has added interface 'aclken_intf' (xilinx.com:signal:clockenable:1.0)
+
+-Upgrade has added interface 'aresetn_intf' (xilinx.com:signal:reset:1.0)
+
+-Upgrade has added interface 'event_s_config_tlast_missing_intf' (xilinx.com:signal:interrupt:1.0)
+
+-Upgrade has added interface 'event_s_config_tlast_unexpected_intf' (xilinx.com:signal:interrupt:1.0)
+
+-Upgrade has added interface 'event_s_data_chanid_incorrect_intf' (xilinx.com:signal:interrupt:1.0)
+
+-Upgrade has added interface 'event_s_data_tlast_missing_intf' (xilinx.com:signal:interrupt:1.0)
+
+-Upgrade has added interface 'event_s_data_tlast_unexpected_intf' (xilinx.com:signal:interrupt:1.0)
+
+-Upgrade has added interface 'event_s_reload_tlast_missing_intf' (xilinx.com:signal:interrupt:1.0)
+
+-Upgrade has added interface 'event_s_reload_tlast_unexpected_intf' (xilinx.com:signal:interrupt:1.0)
+
+
+4. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'fir_150_in277777_2k'. These changes may impact your design.
+
+
+-Upgrade has added port 'aclk'
+
+-Upgrade has added port 'm_axis_data_tdata'
+
+-Upgrade has added port 'm_axis_data_tvalid'
+
+-Upgrade has added port 's_axis_data_tdata'
+
+-Upgrade has added port 's_axis_data_tready'
+
+-Upgrade has added port 's_axis_data_tvalid'
+
+
+5. Customization warnings
+-------------------------
+
+The normal upgrade process failed due to validation failures in the given configuration. Attempting partial upgrade to set as many user parameters as possible. Please check the parameters whose values were not applied.
+
+Customization errors found on 'fir_150_in277777_2k'. Restoring to previous valid configuration.
+
+
+6. Debug Commands
+-----------------
+
+  The following debug information can be passed to Vivado as Tcl commands,
+in order to validate or debug the output of the upgrade flow.
+  You may consult any warnings from within this upgrade, and alter or remove
+the configuration parameter(s) which caused the warning; then execute the Tcl
+commands, and use the IP Customization GUI to verify the IP configuration.
+
+create_ip -vlnv xilinx.com:ip:fir_compiler:7.2 -user_name fir_150_in277777_2k
+set_property -dict "\
+  CONFIG.BestPrecision {false} \
+  CONFIG.Blank_Output {false} \
+  CONFIG.Channel_Sequence {Basic} \
+  CONFIG.Clock_Frequency {2.777777777777777777} \
+  CONFIG.CoefficientSource {COE_File} \
+  CONFIG.CoefficientVector {6,0,-4,-3,5,6,-6,-13,7,44,64,44,7,-13,-6,6,5,-3,-4,0,6} \
+  CONFIG.Coefficient_Buffer_Type {Automatic} \
+  CONFIG.Coefficient_Fanout {false} \
+  CONFIG.Coefficient_File {../../../../../0_filter_design/high_150_in277777_2000.coe} \
+  CONFIG.Coefficient_Fractional_Bits {0} \
+  CONFIG.Coefficient_Reload {false} \
+  CONFIG.Coefficient_Sets {1} \
+  CONFIG.Coefficient_Sign {Signed} \
+  CONFIG.Coefficient_Structure {Inferred} \
+  CONFIG.Coefficient_Width {16} \
+  CONFIG.ColumnConfig {8} \
+  CONFIG.Component_Name {fir_150_in277777_2k} \
+  CONFIG.Control_Broadcast_Fanout {false} \
+  CONFIG.Control_Column_Fanout {false} \
+  CONFIG.Control_LUT_Pipeline {false} \
+  CONFIG.Control_Path_Fanout {false} \
+  CONFIG.DATA_Has_TLAST {Not_Required} \
+  CONFIG.DATA_TUSER_Width {1} \
+  CONFIG.Data_Buffer_Type {Automatic} \
+  CONFIG.Data_Fractional_Bits {0} \
+  CONFIG.Data_Path_Broadcast {false} \
+  CONFIG.Data_Path_Fanout {false} \
+  CONFIG.Data_Sign {Unsigned} \
+  CONFIG.Data_Width {12} \
+  CONFIG.Decimation_Rate {1} \
+  CONFIG.Disable_Half_Band_Centre_Tap {false} \
+  CONFIG.DisplayReloadOrder {false} \
+  CONFIG.Filter_Architecture {Systolic_Multiply_Accumulate} \
+  CONFIG.Filter_Selection {1} \
+  CONFIG.Filter_Type {Single_Rate} \
+  CONFIG.GUI_Behaviour {Coregen} \
+  CONFIG.Gen_MIF_Files {false} \
+  CONFIG.Gen_MIF_from_COE {false} \
+  CONFIG.Gen_MIF_from_Spec {false} \
+  CONFIG.HardwareOversamplingRate {1} \
+  CONFIG.Has_ACLKEN {false} \
+  CONFIG.Has_ARESETn {false} \
+  CONFIG.Input_Buffer_Type {Automatic} \
+  CONFIG.Inter_Column_Pipe_Length {4} \
+  CONFIG.Interpolation_Rate {1} \
+  CONFIG.M_DATA_Has_TREADY {false} \
+  CONFIG.M_DATA_Has_TUSER {Not_Required} \
+  CONFIG.Multi_Column_Support {Automatic} \
+  CONFIG.No_BRAM_Read_First_Mode {false} \
+  CONFIG.No_SRL_Attributes {false} \
+  CONFIG.Num_Reload_Slots {1} \
+  CONFIG.Number_Channels {1} \
+  CONFIG.Number_Paths {1} \
+  CONFIG.Optimal_Column_Lengths {false} \
+  CONFIG.Optimization_Goal {Area} \
+  CONFIG.Optimization_List {None} \
+  CONFIG.Optimization_Selection {None} \
+  CONFIG.Other {false} \
+  CONFIG.Output_Buffer_Type {Automatic} \
+  CONFIG.Output_Rounding_Mode {Full_Precision} \
+  CONFIG.Output_Width {29} \
+  CONFIG.Passband_Max {0.5} \
+  CONFIG.Passband_Min {0.0} \
+  CONFIG.Pattern_List {P4-0,P4-1,P4-2,P4-3,P4-4} \
+  CONFIG.Pre_Adder_Pipeline {false} \
+  CONFIG.Preference_For_Other_Storage {Automatic} \
+  CONFIG.Quantization {Integer_Coefficients} \
+  CONFIG.RateSpecification {Frequency_Specification} \
+  CONFIG.Rate_Change_Type {Integer} \
+  CONFIG.Reload_File {no_coe_file_loaded} \
+  CONFIG.Reset_Data_Vector {true} \
+  CONFIG.S_CONFIG_Method {Single} \
+  CONFIG.S_CONFIG_Sync_Mode {On_Vector} \
+  CONFIG.S_DATA_Has_FIFO {true} \
+  CONFIG.S_DATA_Has_TUSER {Not_Required} \
+  CONFIG.SamplePeriod {1} \
+  CONFIG.Sample_Frequency {0.2777777777777777777} \
+  CONFIG.Select_Pattern {All} \
+  CONFIG.Stopband_Max {1.0} \
+  CONFIG.Stopband_Min {0.5} \
+  CONFIG.Zero_Pack_Factor {1} " [get_ips fir_150_in277777_2k]
+
+

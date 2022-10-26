@@ -1,0 +1,8 @@
+top_spi_master_0_0.v,verilog,xil_defaultlib,../../../bd/top/ip/top_spi_master_0_0/sim/top_spi_master_0_0.v,
+top_clk_tree_0_0.v,verilog,xil_defaultlib,../../../bd/top/ip/top_clk_tree_0_0/sim/top_clk_tree_0_0.v,
+top_spi_master_0_1.v,verilog,xil_defaultlib,../../../bd/top/ip/top_spi_master_0_1/sim/top_spi_master_0_1.v,
+top_filter_wraper_0_0.v,verilog,xil_defaultlib,../../../bd/top/ip/top_filter_wraper_0_0/sim/top_filter_wraper_0_0.v,
+top_ad_9226_0_0.v,verilog,xil_defaultlib,../../../bd/top/ip/top_ad_9226_0_0/sim/top_ad_9226_0_0.v,
+top_connect_0_0.v,verilog,xil_defaultlib,../../../bd/top/ip/top_connect_0_0/sim/top_connect_0_0.v,
+top.v,verilog,xil_defaultlib,../../../bd/top/sim/top.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v

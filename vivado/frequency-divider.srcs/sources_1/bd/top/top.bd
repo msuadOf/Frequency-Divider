@@ -1,0 +1,504 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xBC9B75750D429101",
+      "device": "xc7a35tcpg236-1",
+      "gen_directory": "../../../../frequency-divider.gen/sources_1/bd/top",
+      "name": "top",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "None",
+      "tool_version": "2021.2",
+      "validated": "true"
+    },
+    "design_tree": {
+      "spi_master_1": "",
+      "spi_master_0": "",
+      "ad_9226_0": "",
+      "clk_tree_0": "",
+      "connect_0": "",
+      "filter_wraper_0": ""
+    },
+    "ports": {
+      "o_sck_0": {
+        "direction": "O"
+      },
+      "o_cs_0": {
+        "direction": "O"
+      },
+      "o_tx_ch1_0": {
+        "direction": "O"
+      },
+      "o_tx_ch2_0": {
+        "direction": "O"
+      },
+      "o_sck_1": {
+        "direction": "O"
+      },
+      "o_cs_1": {
+        "direction": "O"
+      },
+      "o_tx_ch1_1": {
+        "direction": "O"
+      },
+      "o_tx_ch2_1": {
+        "direction": "O"
+      },
+      "i_da9226_data_1": {
+        "direction": "I",
+        "left": "12",
+        "right": "0"
+      },
+      "sys_clk_0": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "top_sys_clk_0",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          }
+        }
+      },
+      "o_debugled_0": {
+        "direction": "O"
+      },
+      "o_clk_driver_0": {
+        "direction": "O"
+      },
+      "i_rst_n_0": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      }
+    },
+    "components": {
+      "spi_master_1": {
+        "vlnv": "xilinx.com:module_ref:spi_master:1.0",
+        "xci_name": "top_spi_master_0_1",
+        "xci_path": "ip/top_spi_master_0_1/top_spi_master_0_1.xci",
+        "inst_hier_path": "spi_master_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "spi_master",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "sys_clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "sys_rst_n",
+                "value_src": "constant"
+              }
+            }
+          },
+          "sys_rst_n": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "o_sck": {
+            "direction": "O"
+          },
+          "o_cs": {
+            "direction": "O"
+          },
+          "o_tx_ch1": {
+            "direction": "O"
+          },
+          "o_tx_ch2": {
+            "direction": "O"
+          },
+          "i_send_data": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          }
+        }
+      },
+      "spi_master_0": {
+        "vlnv": "xilinx.com:module_ref:spi_master:1.0",
+        "xci_name": "top_spi_master_0_0",
+        "xci_path": "ip/top_spi_master_0_0/top_spi_master_0_0.xci",
+        "inst_hier_path": "spi_master_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "spi_master",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "sys_clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "sys_rst_n",
+                "value_src": "constant"
+              }
+            }
+          },
+          "sys_rst_n": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "o_sck": {
+            "direction": "O"
+          },
+          "o_cs": {
+            "direction": "O"
+          },
+          "o_tx_ch1": {
+            "direction": "O"
+          },
+          "o_tx_ch2": {
+            "direction": "O"
+          },
+          "i_send_data": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          }
+        }
+      },
+      "ad_9226_0": {
+        "vlnv": "xilinx.com:module_ref:ad_9226:1.0",
+        "xci_name": "top_ad_9226_0_0",
+        "xci_path": "ip/top_ad_9226_0_0/top_ad_9226_0_0.xci",
+        "inst_hier_path": "ad_9226_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "ad_9226",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "sys_clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "sys_rst_n",
+                "value_src": "constant"
+              }
+            }
+          },
+          "sys_rst_n": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "o_clk_driver": {
+            "direction": "O"
+          },
+          "i_da9226_data": {
+            "direction": "I",
+            "left": "12",
+            "right": "0"
+          },
+          "ADC_Data": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "clk_tree_0": {
+        "vlnv": "xilinx.com:module_ref:clk_tree:1.0",
+        "xci_name": "top_clk_tree_0_0",
+        "xci_path": "ip/top_clk_tree_0_0/top_clk_tree_0_0.xci",
+        "inst_hier_path": "clk_tree_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "clk_tree",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "sys_clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "sys_rst_n",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "top_sys_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "sys_rst_n": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "o_clk_5MHz": {
+            "direction": "O"
+          },
+          "o_clk_277kHz": {
+            "direction": "O"
+          },
+          "o_clk_1100kHz": {
+            "direction": "O"
+          }
+        }
+      },
+      "connect_0": {
+        "vlnv": "xilinx.com:module_ref:connect:1.0",
+        "xci_name": "top_connect_0_0",
+        "xci_path": "ip/top_connect_0_0/top_connect_0_0.xci",
+        "inst_hier_path": "connect_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "connect",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "i_rst_n": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "o_rst_n": {
+            "type": "rst",
+            "direction": "O",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          }
+        }
+      },
+      "filter_wraper_0": {
+        "vlnv": "xilinx.com:module_ref:filter_wraper:1.0",
+        "xci_name": "top_filter_wraper_0_0",
+        "xci_path": "ip/top_filter_wraper_0_0/top_filter_wraper_0_0.xci",
+        "inst_hier_path": "filter_wraper_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "filter_wraper",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "sys_clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "sys_rst_n",
+                "value_src": "constant"
+              }
+            }
+          },
+          "sys_rst_n": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "i_filter_datain": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "o_debugled": {
+            "direction": "O"
+          },
+          "o_hpf_16bit": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          },
+          "o_lpf_16bit": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "Net": {
+        "ports": [
+          "clk_tree_0/o_clk_5MHz",
+          "spi_master_1/sys_clk",
+          "spi_master_0/sys_clk"
+        ]
+      },
+      "Net1": {
+        "ports": [
+          "connect_0/o_rst_n",
+          "spi_master_1/sys_rst_n",
+          "spi_master_0/sys_rst_n",
+          "clk_tree_0/sys_rst_n",
+          "ad_9226_0/sys_rst_n",
+          "filter_wraper_0/sys_rst_n"
+        ]
+      },
+      "ad_9226_0_ADC_Data": {
+        "ports": [
+          "ad_9226_0/ADC_Data",
+          "filter_wraper_0/i_filter_datain"
+        ]
+      },
+      "ad_9226_0_o_clk_driver": {
+        "ports": [
+          "ad_9226_0/o_clk_driver",
+          "o_clk_driver_0"
+        ]
+      },
+      "clk_tree_0_o_clk_1100kHz": {
+        "ports": [
+          "clk_tree_0/o_clk_1100kHz",
+          "ad_9226_0/sys_clk"
+        ]
+      },
+      "clk_tree_0_o_clk_277kHz": {
+        "ports": [
+          "clk_tree_0/o_clk_277kHz",
+          "filter_wraper_0/sys_clk"
+        ]
+      },
+      "filter_wraper_0_o_debugled": {
+        "ports": [
+          "filter_wraper_0/o_debugled",
+          "o_debugled_0"
+        ]
+      },
+      "filter_wraper_0_o_hpf_16bit": {
+        "ports": [
+          "filter_wraper_0/o_hpf_16bit",
+          "spi_master_0/i_send_data"
+        ]
+      },
+      "filter_wraper_0_o_lpf_16bit": {
+        "ports": [
+          "filter_wraper_0/o_lpf_16bit",
+          "spi_master_1/i_send_data"
+        ]
+      },
+      "i_da9226_data_1_1": {
+        "ports": [
+          "i_da9226_data_1",
+          "ad_9226_0/i_da9226_data"
+        ]
+      },
+      "i_rst_n_0_1": {
+        "ports": [
+          "i_rst_n_0",
+          "connect_0/i_rst_n"
+        ]
+      },
+      "spi_master_0_o_cs": {
+        "ports": [
+          "spi_master_0/o_cs",
+          "o_cs_0"
+        ]
+      },
+      "spi_master_0_o_sck": {
+        "ports": [
+          "spi_master_0/o_sck",
+          "o_sck_0"
+        ]
+      },
+      "spi_master_0_o_tx_ch1": {
+        "ports": [
+          "spi_master_0/o_tx_ch1",
+          "o_tx_ch1_0"
+        ]
+      },
+      "spi_master_0_o_tx_ch2": {
+        "ports": [
+          "spi_master_0/o_tx_ch2",
+          "o_tx_ch2_0"
+        ]
+      },
+      "spi_master_1_o_cs": {
+        "ports": [
+          "spi_master_1/o_cs",
+          "o_cs_1"
+        ]
+      },
+      "spi_master_1_o_sck": {
+        "ports": [
+          "spi_master_1/o_sck",
+          "o_sck_1"
+        ]
+      },
+      "spi_master_1_o_tx_ch1": {
+        "ports": [
+          "spi_master_1/o_tx_ch1",
+          "o_tx_ch1_1"
+        ]
+      },
+      "spi_master_1_o_tx_ch2": {
+        "ports": [
+          "spi_master_1/o_tx_ch2",
+          "o_tx_ch2_1"
+        ]
+      },
+      "sys_clk_0_1": {
+        "ports": [
+          "sys_clk_0",
+          "clk_tree_0/sys_clk"
+        ]
+      }
+    }
+  }
+}
