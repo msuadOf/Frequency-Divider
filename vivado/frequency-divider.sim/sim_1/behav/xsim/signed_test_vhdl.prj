@@ -1,0 +1,9 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../frequency-divider.ip_user_files/ip/fir_compiler_high/demo_tb/tb_fir_compiler_high.vhd" \
+"../../../../frequency-divider.ip_user_files/ip/fir_compiler_high/sim/fir_compiler_high.vhd" \
+"../../../../frequency-divider.ip_user_files/ip/fir_compiler_low/demo_tb/tb_fir_compiler_low.vhd" \
+"../../../../frequency-divider.ip_user_files/ip/fir_compiler_low/sim/fir_compiler_low.vhd" \
+
+# Do not sort compile order
+nosort

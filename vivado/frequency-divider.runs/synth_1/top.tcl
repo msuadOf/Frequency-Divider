@@ -71,12 +71,18 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 3
+set_param checkpoint.writeSynthRtdsInDcp 1
+set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
+set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir /home/zz/xilinx/frequency-divider/vivado/frequency-divider.cache/wt [current_project]
 set_property parent.project_path /home/zz/xilinx/frequency-divider/vivado/frequency-divider.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
@@ -85,16 +91,29 @@ set_property ip_output_repo /home/zz/xilinx/frequency-divider/vivado/frequency-d
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
+add_files /home/zz/Desktop/designer/high_fir_eq_50_in277777_pass_10000_stop_100.coe
+add_files /home/zz/Desktop/designer/low_fir_eq_50_in277777_pass_1500_stop_2500.coe
 read_verilog -library xil_defaultlib {
   /home/zz/xilinx/frequency-divider/src/rtl/ad9226/ad9226_driver.v
   /home/zz/xilinx/frequency-divider/src/rtl/ad9226/ad_9226.v
   /home/zz/xilinx/frequency-divider/src/rtl/clk_div.v
   /home/zz/xilinx/frequency-divider/src/rtl/clk_tree.v
-  /home/zz/xilinx/frequency-divider/src/rtl/connect.v
   /home/zz/xilinx/frequency-divider/src/rtl/filter_wraper.v
   /home/zz/xilinx/frequency-divider/src/rtl/spi/spi_master.v
   /home/zz/xilinx/frequency-divider/src/rtl/top.v
+  /home/zz/xilinx/frequency-divider/src/rtl/dac_9767/dac_9767.v
+  /home/zz/xilinx/frequency-divider/src/rtl/dac_9767/dac_9767_top.v
+  /home/zz/xilinx/frequency-divider/src/rtl/digitLed.v
+  /home/zz/xilinx/frequency-divider/src/rtl/digitLed_top.v
 }
+read_ip -quiet /home/zz/xilinx/frequency-divider/vivado/frequency-divider.srcs/sources_1/ip/fir_compiler_high/fir_compiler_high.xci
+set_property used_in_implementation false [get_files -all /home/zz/xilinx/frequency-divider/vivado/frequency-divider.srcs/sources_1/ip/fir_compiler_high/constraints/fir_compiler_v7_2.xdc]
+
+read_ip -quiet /home/zz/xilinx/frequency-divider/vivado/frequency-divider.srcs/sources_1/ip/fir_compiler_low/fir_compiler_low.xci
+set_property used_in_implementation false [get_files -all /home/zz/xilinx/frequency-divider/vivado/frequency-divider.srcs/sources_1/ip/fir_compiler_low/constraints/fir_compiler_v7_2.xdc]
+
+read_ip -quiet /home/zz/xilinx/frequency-divider/vivado/frequency-divider.srcs/sources_1/ip/dds_compiler_2k/dds_compiler_2k.xci
+
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -116,6 +135,11 @@ set_property used_in_implementation false [get_files /home/zz/xilinx/frequency-d
 read_xdc /home/zz/xilinx/frequency-divider/src/pin_con/top_pins.xdc
 set_property used_in_implementation false [get_files /home/zz/xilinx/frequency-divider/src/pin_con/top_pins.xdc]
 
+read_xdc /home/zz/xilinx/frequency-divider/vivado/frequency-divider.srcs/constrs_1/new/debug_chouse.xdc
+set_property used_in_implementation false [get_files /home/zz/xilinx/frequency-divider/vivado/frequency-divider.srcs/constrs_1/new/debug_chouse.xdc]
+
+read_xdc dont_touch.xdc
+set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 
 read_checkpoint -auto_incremental -incremental /home/zz/xilinx/frequency-divider/vivado/frequency-divider.srcs/utils_1/imports/synth_1/top.dcp

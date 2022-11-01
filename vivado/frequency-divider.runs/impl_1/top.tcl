@@ -115,6 +115,7 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 
@@ -124,9 +125,9 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param synth.incrementalSynthesisCache ./.Xil/Vivado-51586-ubuntu/incrSyn
   set_param chipscope.maxJobs 3
   set_param checkpoint.writeSynthRtdsInDcp 1
+  set_param xicom.use_bs_reader 1
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7a35tcpg236-1
   set_property design_mode GateLvl [current_fileset]
@@ -140,11 +141,15 @@ OPTRACE "set parameters" START { }
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet /home/zz/xilinx/frequency-divider/vivado/frequency-divider.runs/synth_1/top.dcp
+  read_ip -quiet /home/zz/xilinx/frequency-divider/vivado/frequency-divider.srcs/sources_1/ip/fir_compiler_high/fir_compiler_high.xci
+  read_ip -quiet /home/zz/xilinx/frequency-divider/vivado/frequency-divider.srcs/sources_1/ip/fir_compiler_low/fir_compiler_low.xci
+  read_ip -quiet /home/zz/xilinx/frequency-divider/vivado/frequency-divider.srcs/sources_1/ip/dds_compiler_2k/dds_compiler_2k.xci
 OPTRACE "read constraints: implementation" START { }
   read_xdc /home/zz/xilinx/frequency-divider/src/pin_con/ad9226_pin.xdc
   read_xdc /home/zz/xilinx/frequency-divider/src/pin_con/spi_pin.xdc
   read_xdc /home/zz/xilinx/frequency-divider/src/pin_con/startspeedup.xdc
   read_xdc /home/zz/xilinx/frequency-divider/src/pin_con/top_pins.xdc
+  read_xdc /home/zz/xilinx/frequency-divider/vivado/frequency-divider.srcs/constrs_1/new/debug_chouse.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }

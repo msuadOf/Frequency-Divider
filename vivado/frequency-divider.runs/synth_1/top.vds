@@ -2,13 +2,13 @@
 # Vivado v2021.2 (64-bit)
 # SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
 # IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
-# Start of session at: Wed Oct 26 07:24:58 2022
-# Process ID: 55474
+# Start of session at: Sun Oct 30 22:21:28 2022
+# Process ID: 468678
 # Current directory: /home/zz/xilinx/frequency-divider/vivado/frequency-divider.runs/synth_1
 # Command line: vivado -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
 # Log file: /home/zz/xilinx/frequency-divider/vivado/frequency-divider.runs/synth_1/top.vds
 # Journal file: /home/zz/xilinx/frequency-divider/vivado/frequency-divider.runs/synth_1/vivado.jou
-# Running On: ubuntu, OS: Linux, CPU Frequency: 3600.111 MHz, CPU Physical cores: 12, Host memory: 8300 MB
+# Running On: ubuntu, OS: Linux, CPU Frequency: 3600.109 MHz, CPU Physical cores: 12, Host memory: 8300 MB
 #-----------------------------------------------------------
 source top.tcl -notrace
 Command: read_checkpoint -auto_incremental -incremental /home/zz/xilinx/frequency-divider/vivado/frequency-divider.srcs/utils_1/imports/synth_1/top.dcp
@@ -23,56 +23,370 @@ WARNING: [Designutils 20-4072] Reference run did not run incremental synthesis b
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 55502
+INFO: [Synth 8-7075] Helper process launched with PID 468712
+WARNING: [Synth 8-992] dds_test_data is already implicitly declared earlier [/home/zz/xilinx/frequency-divider/src/rtl/top.v:91]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2607.188 ; gain = 0.000 ; free physical = 436 ; free virtual = 4334
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2607.195 ; gain = 0.000 ; free physical = 121 ; free virtual = 1082
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'top' [/home/zz/xilinx/frequency-divider/src/rtl/top.v:1]
-INFO: [Synth 8-6157] synthesizing module 'ad_9226' [/home/zz/xilinx/frequency-divider/src/rtl/ad9226/ad_9226.v:24]
-INFO: [Synth 8-6157] synthesizing module 'ad9226_driver' [/home/zz/xilinx/frequency-divider/src/rtl/ad9226/ad9226_driver.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'ad9226_driver' (1#1) [/home/zz/xilinx/frequency-divider/src/rtl/ad9226/ad9226_driver.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'ad_9226' (2#1) [/home/zz/xilinx/frequency-divider/src/rtl/ad9226/ad_9226.v:24]
 INFO: [Synth 8-6157] synthesizing module 'clk_tree' [/home/zz/xilinx/frequency-divider/src/rtl/clk_tree.v:1]
 INFO: [Synth 8-6157] synthesizing module 'clk_div' [/home/zz/xilinx/frequency-divider/src/rtl/clk_div.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'clk_div' (3#1) [/home/zz/xilinx/frequency-divider/src/rtl/clk_div.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'clk_tree' (4#1) [/home/zz/xilinx/frequency-divider/src/rtl/clk_tree.v:1]
-INFO: [Synth 8-6157] synthesizing module 'connect' [/home/zz/xilinx/frequency-divider/src/rtl/connect.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'connect' (5#1) [/home/zz/xilinx/frequency-divider/src/rtl/connect.v:1]
-INFO: [Synth 8-6157] synthesizing module 'filter_wraper' [/home/zz/xilinx/frequency-divider/src/rtl/filter_wraper.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'filter_wraper' (6#1) [/home/zz/xilinx/frequency-divider/src/rtl/filter_wraper.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'clk_div' (1#1) [/home/zz/xilinx/frequency-divider/src/rtl/clk_div.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'clk_tree' (2#1) [/home/zz/xilinx/frequency-divider/src/rtl/clk_tree.v:1]
+INFO: [Synth 8-6157] synthesizing module 'ad_9226' [/home/zz/xilinx/frequency-divider/src/rtl/ad9226/ad_9226.v:24]
+INFO: [Synth 8-6157] synthesizing module 'ad9226_driver' [/home/zz/xilinx/frequency-divider/src/rtl/ad9226/ad9226_driver.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ad9226_driver' (3#1) [/home/zz/xilinx/frequency-divider/src/rtl/ad9226/ad9226_driver.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ad_9226' (4#1) [/home/zz/xilinx/frequency-divider/src/rtl/ad9226/ad_9226.v:24]
+INFO: [Synth 8-638] synthesizing module 'fir_compiler_high' [/home/zz/xilinx/frequency-divider/vivado/frequency-divider.srcs/sources_1/ip/fir_compiler_high/synth/fir_compiler_high.vhd:70]
+	Parameter C_XDEVICEFAMILY bound to: artix7 - type: string 
+	Parameter C_ELABORATION_DIR bound to: ./ - type: string 
+	Parameter C_COMPONENT_NAME bound to: fir_compiler_high - type: string 
+	Parameter C_COEF_FILE bound to: fir_compiler_high.mif - type: string 
+	Parameter C_COEF_FILE_LINES bound to: 25 - type: integer 
+	Parameter C_FILTER_TYPE bound to: 0 - type: integer 
+	Parameter C_INTERP_RATE bound to: 1 - type: integer 
+	Parameter C_DECIM_RATE bound to: 1 - type: integer 
+	Parameter C_ZERO_PACKING_FACTOR bound to: 1 - type: integer 
+	Parameter C_SYMMETRY bound to: 2 - type: integer 
+	Parameter C_NUM_FILTS bound to: 1 - type: integer 
+	Parameter C_NUM_TAPS bound to: 50 - type: integer 
+	Parameter C_NUM_CHANNELS bound to: 1 - type: integer 
+	Parameter C_CHANNEL_PATTERN bound to: fixed - type: string 
+	Parameter C_ROUND_MODE bound to: 0 - type: integer 
+	Parameter C_COEF_RELOAD bound to: 0 - type: integer 
+	Parameter C_NUM_RELOAD_SLOTS bound to: 1 - type: integer 
+	Parameter C_COL_MODE bound to: 1 - type: integer 
+	Parameter C_COL_PIPE_LEN bound to: 4 - type: integer 
+	Parameter C_COL_CONFIG bound to: 25 - type: string 
+	Parameter C_OPTIMIZATION bound to: 0 - type: integer 
+	Parameter C_DATA_PATH_WIDTHS bound to: 16 - type: string 
+	Parameter C_DATA_IP_PATH_WIDTHS bound to: 16 - type: string 
+	Parameter C_DATA_PX_PATH_WIDTHS bound to: 16 - type: string 
+	Parameter C_DATA_WIDTH bound to: 16 - type: integer 
+	Parameter C_COEF_PATH_WIDTHS bound to: 16 - type: string 
+	Parameter C_COEF_WIDTH bound to: 16 - type: integer 
+	Parameter C_DATA_PATH_SRC bound to: 0 - type: string 
+	Parameter C_COEF_PATH_SRC bound to: 0 - type: string 
+	Parameter C_PX_PATH_SRC bound to: 0 - type: string 
+	Parameter C_DATA_PATH_SIGN bound to: 0 - type: string 
+	Parameter C_COEF_PATH_SIGN bound to: 0 - type: string 
+	Parameter C_ACCUM_PATH_WIDTHS bound to: 33 - type: string 
+	Parameter C_OUTPUT_WIDTH bound to: 33 - type: integer 
+	Parameter C_OUTPUT_PATH_WIDTHS bound to: 33 - type: string 
+	Parameter C_ACCUM_OP_PATH_WIDTHS bound to: 33 - type: string 
+	Parameter C_EXT_MULT_CNFG bound to: none - type: string 
+	Parameter C_DATA_PATH_PSAMP_SRC bound to: 0 - type: string 
+	Parameter C_OP_PATH_PSAMP_SRC bound to: 0 - type: string 
+	Parameter C_NUM_MADDS bound to: 25 - type: integer 
+	Parameter C_OPT_MADDS bound to: none - type: string 
+	Parameter C_OVERSAMPLING_RATE bound to: 1 - type: integer 
+	Parameter C_INPUT_RATE bound to: 1 - type: integer 
+	Parameter C_OUTPUT_RATE bound to: 1 - type: integer 
+	Parameter C_DATA_MEMTYPE bound to: 0 - type: integer 
+	Parameter C_COEF_MEMTYPE bound to: 2 - type: integer 
+	Parameter C_IPBUFF_MEMTYPE bound to: 0 - type: integer 
+	Parameter C_OPBUFF_MEMTYPE bound to: 0 - type: integer 
+	Parameter C_DATAPATH_MEMTYPE bound to: 0 - type: integer 
+	Parameter C_MEM_ARRANGEMENT bound to: 1 - type: integer 
+	Parameter C_DATA_MEM_PACKING bound to: 0 - type: integer 
+	Parameter C_COEF_MEM_PACKING bound to: 0 - type: integer 
+	Parameter C_FILTS_PACKED bound to: 0 - type: integer 
+	Parameter C_LATENCY bound to: 31 - type: integer 
+	Parameter C_HAS_ARESETn bound to: 0 - type: integer 
+	Parameter C_HAS_ACLKEN bound to: 0 - type: integer 
+	Parameter C_DATA_HAS_TLAST bound to: 0 - type: integer 
+	Parameter C_S_DATA_HAS_FIFO bound to: 1 - type: integer 
+	Parameter C_S_DATA_HAS_TUSER bound to: 0 - type: integer 
+	Parameter C_S_DATA_TDATA_WIDTH bound to: 16 - type: integer 
+	Parameter C_S_DATA_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_DATA_HAS_TREADY bound to: 0 - type: integer 
+	Parameter C_M_DATA_HAS_TUSER bound to: 0 - type: integer 
+	Parameter C_M_DATA_TDATA_WIDTH bound to: 40 - type: integer 
+	Parameter C_M_DATA_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_HAS_CONFIG_CHANNEL bound to: 0 - type: integer 
+	Parameter C_CONFIG_SYNC_MODE bound to: 0 - type: integer 
+	Parameter C_CONFIG_PACKET_SIZE bound to: 0 - type: integer 
+	Parameter C_CONFIG_TDATA_WIDTH bound to: 1 - type: integer 
+	Parameter C_RELOAD_TDATA_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'fir_compiler_v7_2_17' declared at '/home/zz/xilinx/frequency-divider/vivado/frequency-divider.srcs/sources_1/ip/fir_compiler_high/hdl/fir_compiler_v7_2_vh_rfs.vhd:67113' bound to instance 'U0' of component 'fir_compiler_v7_2_17' [/home/zz/xilinx/frequency-divider/vivado/frequency-divider.srcs/sources_1/ip/fir_compiler_high/synth/fir_compiler_high.vhd:198]
+WARNING: [Synth 8-5858] RAM p_casc_reg from Abstract Data Type (record/struct) for this pattern/configuration is not supported. This will most likely be implemented in registers
+WARNING: [Synth 8-5858] RAM p_path_out_reg from Abstract Data Type (record/struct) for this pattern/configuration is not supported. This will most likely be implemented in registers
+INFO: [Synth 8-256] done synthesizing module 'fir_compiler_high' (17#1) [/home/zz/xilinx/frequency-divider/vivado/frequency-divider.srcs/sources_1/ip/fir_compiler_high/synth/fir_compiler_high.vhd:70]
+WARNING: [Synth 8-7071] port 's_axis_data_tready' of module 'fir_compiler_high' is unconnected for instance 'fir_compiler_high_0' [/home/zz/xilinx/frequency-divider/src/rtl/top.v:55]
+WARNING: [Synth 8-7071] port 'm_axis_data_tvalid' of module 'fir_compiler_high' is unconnected for instance 'fir_compiler_high_0' [/home/zz/xilinx/frequency-divider/src/rtl/top.v:55]
+WARNING: [Synth 8-7023] instance 'fir_compiler_high_0' of module 'fir_compiler_high' has 6 connections declared, but only 4 given [/home/zz/xilinx/frequency-divider/src/rtl/top.v:55]
+INFO: [Synth 8-638] synthesizing module 'fir_compiler_low' [/home/zz/xilinx/frequency-divider/vivado/frequency-divider.srcs/sources_1/ip/fir_compiler_low/synth/fir_compiler_low.vhd:70]
+	Parameter C_XDEVICEFAMILY bound to: artix7 - type: string 
+	Parameter C_ELABORATION_DIR bound to: ./ - type: string 
+	Parameter C_COMPONENT_NAME bound to: fir_compiler_low - type: string 
+	Parameter C_COEF_FILE bound to: fir_compiler_low.mif - type: string 
+	Parameter C_COEF_FILE_LINES bound to: 38 - type: integer 
+	Parameter C_FILTER_TYPE bound to: 0 - type: integer 
+	Parameter C_INTERP_RATE bound to: 1 - type: integer 
+	Parameter C_DECIM_RATE bound to: 1 - type: integer 
+	Parameter C_ZERO_PACKING_FACTOR bound to: 1 - type: integer 
+	Parameter C_SYMMETRY bound to: 1 - type: integer 
+	Parameter C_NUM_FILTS bound to: 1 - type: integer 
+	Parameter C_NUM_TAPS bound to: 76 - type: integer 
+	Parameter C_NUM_CHANNELS bound to: 1 - type: integer 
+	Parameter C_CHANNEL_PATTERN bound to: fixed - type: string 
+	Parameter C_ROUND_MODE bound to: 0 - type: integer 
+	Parameter C_COEF_RELOAD bound to: 0 - type: integer 
+	Parameter C_NUM_RELOAD_SLOTS bound to: 1 - type: integer 
+	Parameter C_COL_MODE bound to: 1 - type: integer 
+	Parameter C_COL_PIPE_LEN bound to: 4 - type: integer 
+	Parameter C_COL_CONFIG bound to: 38 - type: string 
+	Parameter C_OPTIMIZATION bound to: 0 - type: integer 
+	Parameter C_DATA_PATH_WIDTHS bound to: 16 - type: string 
+	Parameter C_DATA_IP_PATH_WIDTHS bound to: 16 - type: string 
+	Parameter C_DATA_PX_PATH_WIDTHS bound to: 16 - type: string 
+	Parameter C_DATA_WIDTH bound to: 16 - type: integer 
+	Parameter C_COEF_PATH_WIDTHS bound to: 16 - type: string 
+	Parameter C_COEF_WIDTH bound to: 16 - type: integer 
+	Parameter C_DATA_PATH_SRC bound to: 0 - type: string 
+	Parameter C_COEF_PATH_SRC bound to: 0 - type: string 
+	Parameter C_PX_PATH_SRC bound to: 0 - type: string 
+	Parameter C_DATA_PATH_SIGN bound to: 0 - type: string 
+	Parameter C_COEF_PATH_SIGN bound to: 0 - type: string 
+	Parameter C_ACCUM_PATH_WIDTHS bound to: 34 - type: string 
+	Parameter C_OUTPUT_WIDTH bound to: 34 - type: integer 
+	Parameter C_OUTPUT_PATH_WIDTHS bound to: 34 - type: string 
+	Parameter C_ACCUM_OP_PATH_WIDTHS bound to: 34 - type: string 
+	Parameter C_EXT_MULT_CNFG bound to: none - type: string 
+	Parameter C_DATA_PATH_PSAMP_SRC bound to: 0 - type: string 
+	Parameter C_OP_PATH_PSAMP_SRC bound to: 0 - type: string 
+	Parameter C_NUM_MADDS bound to: 38 - type: integer 
+	Parameter C_OPT_MADDS bound to: none - type: string 
+	Parameter C_OVERSAMPLING_RATE bound to: 1 - type: integer 
+	Parameter C_INPUT_RATE bound to: 1 - type: integer 
+	Parameter C_OUTPUT_RATE bound to: 1 - type: integer 
+	Parameter C_DATA_MEMTYPE bound to: 0 - type: integer 
+	Parameter C_COEF_MEMTYPE bound to: 2 - type: integer 
+	Parameter C_IPBUFF_MEMTYPE bound to: 0 - type: integer 
+	Parameter C_OPBUFF_MEMTYPE bound to: 0 - type: integer 
+	Parameter C_DATAPATH_MEMTYPE bound to: 0 - type: integer 
+	Parameter C_MEM_ARRANGEMENT bound to: 1 - type: integer 
+	Parameter C_DATA_MEM_PACKING bound to: 0 - type: integer 
+	Parameter C_COEF_MEM_PACKING bound to: 0 - type: integer 
+	Parameter C_FILTS_PACKED bound to: 0 - type: integer 
+	Parameter C_LATENCY bound to: 44 - type: integer 
+	Parameter C_HAS_ARESETn bound to: 0 - type: integer 
+	Parameter C_HAS_ACLKEN bound to: 0 - type: integer 
+	Parameter C_DATA_HAS_TLAST bound to: 0 - type: integer 
+	Parameter C_S_DATA_HAS_FIFO bound to: 1 - type: integer 
+	Parameter C_S_DATA_HAS_TUSER bound to: 0 - type: integer 
+	Parameter C_S_DATA_TDATA_WIDTH bound to: 16 - type: integer 
+	Parameter C_S_DATA_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_DATA_HAS_TREADY bound to: 0 - type: integer 
+	Parameter C_M_DATA_HAS_TUSER bound to: 0 - type: integer 
+	Parameter C_M_DATA_TDATA_WIDTH bound to: 40 - type: integer 
+	Parameter C_M_DATA_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_HAS_CONFIG_CHANNEL bound to: 0 - type: integer 
+	Parameter C_CONFIG_SYNC_MODE bound to: 0 - type: integer 
+	Parameter C_CONFIG_PACKET_SIZE bound to: 0 - type: integer 
+	Parameter C_CONFIG_TDATA_WIDTH bound to: 1 - type: integer 
+	Parameter C_RELOAD_TDATA_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'fir_compiler_v7_2_17' declared at '/home/zz/xilinx/frequency-divider/vivado/frequency-divider.srcs/sources_1/ip/fir_compiler_high/hdl/fir_compiler_v7_2_vh_rfs.vhd:67113' bound to instance 'U0' of component 'fir_compiler_v7_2_17' [/home/zz/xilinx/frequency-divider/vivado/frequency-divider.srcs/sources_1/ip/fir_compiler_low/synth/fir_compiler_low.vhd:198]
+WARNING: [Synth 8-5858] RAM p_casc_reg from Abstract Data Type (record/struct) for this pattern/configuration is not supported. This will most likely be implemented in registers
+WARNING: [Synth 8-5858] RAM p_path_out_reg from Abstract Data Type (record/struct) for this pattern/configuration is not supported. This will most likely be implemented in registers
+INFO: [Synth 8-256] done synthesizing module 'fir_compiler_low' (18#1) [/home/zz/xilinx/frequency-divider/vivado/frequency-divider.srcs/sources_1/ip/fir_compiler_low/synth/fir_compiler_low.vhd:70]
+WARNING: [Synth 8-7071] port 's_axis_data_tready' of module 'fir_compiler_low' is unconnected for instance 'fir_compiler_low_0' [/home/zz/xilinx/frequency-divider/src/rtl/top.v:65]
+WARNING: [Synth 8-7071] port 'm_axis_data_tvalid' of module 'fir_compiler_low' is unconnected for instance 'fir_compiler_low_0' [/home/zz/xilinx/frequency-divider/src/rtl/top.v:65]
+WARNING: [Synth 8-7023] instance 'fir_compiler_low_0' of module 'fir_compiler_low' has 6 connections declared, but only 4 given [/home/zz/xilinx/frequency-divider/src/rtl/top.v:65]
+INFO: [Synth 8-638] synthesizing module 'dds_compiler_2k' [/home/zz/xilinx/frequency-divider/vivado/frequency-divider.srcs/sources_1/ip/dds_compiler_2k/synth/dds_compiler_2k.vhd:67]
+WARNING: [Synth 8-5640] Port 'debug_axi_pinc_in' is missing in component declaration [/home/zz/xilinx/frequency-divider/vivado/frequency-divider.srcs/sources_1/ip/dds_compiler_2k/synth/dds_compiler_2k.vhd:70]
+WARNING: [Synth 8-5640] Port 'debug_axi_poff_in' is missing in component declaration [/home/zz/xilinx/frequency-divider/vivado/frequency-divider.srcs/sources_1/ip/dds_compiler_2k/synth/dds_compiler_2k.vhd:70]
+WARNING: [Synth 8-5640] Port 'debug_axi_resync_in' is missing in component declaration [/home/zz/xilinx/frequency-divider/vivado/frequency-divider.srcs/sources_1/ip/dds_compiler_2k/synth/dds_compiler_2k.vhd:70]
+WARNING: [Synth 8-5640] Port 'debug_axi_chan_in' is missing in component declaration [/home/zz/xilinx/frequency-divider/vivado/frequency-divider.srcs/sources_1/ip/dds_compiler_2k/synth/dds_compiler_2k.vhd:70]
+WARNING: [Synth 8-5640] Port 'debug_core_nd' is missing in component declaration [/home/zz/xilinx/frequency-divider/vivado/frequency-divider.srcs/sources_1/ip/dds_compiler_2k/synth/dds_compiler_2k.vhd:70]
+WARNING: [Synth 8-5640] Port 'debug_phase' is missing in component declaration [/home/zz/xilinx/frequency-divider/vivado/frequency-divider.srcs/sources_1/ip/dds_compiler_2k/synth/dds_compiler_2k.vhd:70]
+WARNING: [Synth 8-5640] Port 'debug_phase_nd' is missing in component declaration [/home/zz/xilinx/frequency-divider/vivado/frequency-divider.srcs/sources_1/ip/dds_compiler_2k/synth/dds_compiler_2k.vhd:70]
+	Parameter C_XDEVICEFAMILY bound to: artix7 - type: string 
+	Parameter C_MODE_OF_OPERATION bound to: 0 - type: integer 
+	Parameter C_MODULUS bound to: 9 - type: integer 
+	Parameter C_ACCUMULATOR_WIDTH bound to: 20 - type: integer 
+	Parameter C_CHANNELS bound to: 1 - type: integer 
+	Parameter C_HAS_PHASE_OUT bound to: 0 - type: integer 
+	Parameter C_HAS_PHASEGEN bound to: 1 - type: integer 
+	Parameter C_HAS_SINCOS bound to: 1 - type: integer 
+	Parameter C_LATENCY bound to: 3 - type: integer 
+	Parameter C_MEM_TYPE bound to: 1 - type: integer 
+	Parameter C_NEGATIVE_COSINE bound to: 0 - type: integer 
+	Parameter C_NEGATIVE_SINE bound to: 0 - type: integer 
+	Parameter C_NOISE_SHAPING bound to: 0 - type: integer 
+	Parameter C_OUTPUTS_REQUIRED bound to: 0 - type: integer 
+	Parameter C_OUTPUT_FORM bound to: 0 - type: integer 
+	Parameter C_OUTPUT_WIDTH bound to: 8 - type: integer 
+	Parameter C_PHASE_ANGLE_WIDTH bound to: 8 - type: integer 
+	Parameter C_PHASE_INCREMENT bound to: 2 - type: integer 
+	Parameter C_PHASE_INCREMENT_VALUE bound to: 1110101111101,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 - type: string 
+	Parameter C_RESYNC bound to: 0 - type: integer 
+	Parameter C_PHASE_OFFSET bound to: 0 - type: integer 
+	Parameter C_PHASE_OFFSET_VALUE bound to: 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 - type: string 
+	Parameter C_OPTIMISE_GOAL bound to: 0 - type: integer 
+	Parameter C_USE_DSP48 bound to: 0 - type: integer 
+	Parameter C_POR_MODE bound to: 0 - type: integer 
+	Parameter C_AMPLITUDE bound to: 0 - type: integer 
+	Parameter C_HAS_ACLKEN bound to: 0 - type: integer 
+	Parameter C_HAS_ARESETN bound to: 0 - type: integer 
+	Parameter C_HAS_TLAST bound to: 0 - type: integer 
+	Parameter C_HAS_TREADY bound to: 0 - type: integer 
+	Parameter C_HAS_S_PHASE bound to: 0 - type: integer 
+	Parameter C_S_PHASE_TDATA_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_PHASE_HAS_TUSER bound to: 0 - type: integer 
+	Parameter C_S_PHASE_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_HAS_S_CONFIG bound to: 0 - type: integer 
+	Parameter C_S_CONFIG_SYNC_MODE bound to: 0 - type: integer 
+	Parameter C_S_CONFIG_TDATA_WIDTH bound to: 1 - type: integer 
+	Parameter C_HAS_M_DATA bound to: 1 - type: integer 
+	Parameter C_M_DATA_TDATA_WIDTH bound to: 8 - type: integer 
+	Parameter C_M_DATA_HAS_TUSER bound to: 0 - type: integer 
+	Parameter C_M_DATA_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_HAS_M_PHASE bound to: 0 - type: integer 
+	Parameter C_M_PHASE_TDATA_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_PHASE_HAS_TUSER bound to: 0 - type: integer 
+	Parameter C_M_PHASE_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_DEBUG_INTERFACE bound to: 0 - type: integer 
+	Parameter C_CHAN_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'dds_compiler_v6_0_21' declared at '/home/zz/xilinx/frequency-divider/vivado/frequency-divider.srcs/sources_1/ip/dds_compiler_2k/hdl/dds_compiler_v6_0_vh_rfs.vhd:47308' bound to instance 'U0' of component 'dds_compiler_v6_0_21' [/home/zz/xilinx/frequency-divider/vivado/frequency-divider.srcs/sources_1/ip/dds_compiler_2k/synth/dds_compiler_2k.vhd:169]
+INFO: [Synth 8-256] done synthesizing module 'dds_compiler_2k' (27#1) [/home/zz/xilinx/frequency-divider/vivado/frequency-divider.srcs/sources_1/ip/dds_compiler_2k/synth/dds_compiler_2k.vhd:67]
+WARNING: [Synth 8-7071] port 'm_axis_data_tvalid' of module 'dds_compiler_2k' is unconnected for instance 'dds_compiler_2k_0_test' [/home/zz/xilinx/frequency-divider/src/rtl/top.v:92]
+WARNING: [Synth 8-7023] instance 'dds_compiler_2k_0_test' of module 'dds_compiler_2k' has 3 connections declared, but only 2 given [/home/zz/xilinx/frequency-divider/src/rtl/top.v:92]
 INFO: [Synth 8-6157] synthesizing module 'spi_master' [/home/zz/xilinx/frequency-divider/src/rtl/spi/spi_master.v:2]
-WARNING: [Synth 8-7137] Register Data_State_reg in module spi_master has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/zz/xilinx/frequency-divider/src/rtl/spi/spi_master.v:47]
-INFO: [Synth 8-6155] done synthesizing module 'spi_master' (7#1) [/home/zz/xilinx/frequency-divider/src/rtl/spi/spi_master.v:2]
-INFO: [Synth 8-6155] done synthesizing module 'top' (8#1) [/home/zz/xilinx/frequency-divider/src/rtl/top.v:1]
-WARNING: [Synth 8-7129] Port i_da9226_data[12] in module ad9226_driver is either unconnected or has no load
-WARNING: [Synth 8-7129] Port i_da9226_data[11] in module ad9226_driver is either unconnected or has no load
-WARNING: [Synth 8-7129] Port i_da9226_data[10] in module ad9226_driver is either unconnected or has no load
-WARNING: [Synth 8-7129] Port i_da9226_data[9] in module ad9226_driver is either unconnected or has no load
-WARNING: [Synth 8-7129] Port i_da9226_data[8] in module ad9226_driver is either unconnected or has no load
-WARNING: [Synth 8-7129] Port i_da9226_data[7] in module ad9226_driver is either unconnected or has no load
-WARNING: [Synth 8-7129] Port i_da9226_data[6] in module ad9226_driver is either unconnected or has no load
-WARNING: [Synth 8-7129] Port i_da9226_data[5] in module ad9226_driver is either unconnected or has no load
-WARNING: [Synth 8-7129] Port i_da9226_data[4] in module ad9226_driver is either unconnected or has no load
-WARNING: [Synth 8-7129] Port i_da9226_data[3] in module ad9226_driver is either unconnected or has no load
-WARNING: [Synth 8-7129] Port i_da9226_data[2] in module ad9226_driver is either unconnected or has no load
-WARNING: [Synth 8-7129] Port i_da9226_data[1] in module ad9226_driver is either unconnected or has no load
+INFO: [Synth 8-6155] done synthesizing module 'spi_master' (28#1) [/home/zz/xilinx/frequency-divider/src/rtl/spi/spi_master.v:2]
+INFO: [Synth 8-6157] synthesizing module 'digitLed_top' [/home/zz/xilinx/frequency-divider/src/rtl/digitLed_top.v:1]
+INFO: [Synth 8-6157] synthesizing module 'digitLed' [/home/zz/xilinx/frequency-divider/src/rtl/digitLed.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'digitLed' (29#1) [/home/zz/xilinx/frequency-divider/src/rtl/digitLed.v:1]
+WARNING: [Synth 8-3848] Net smg_p_out in module/entity digitLed_top does not have driver. [/home/zz/xilinx/frequency-divider/src/rtl/digitLed_top.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'digitLed_top' (30#1) [/home/zz/xilinx/frequency-divider/src/rtl/digitLed_top.v:1]
+WARNING: [Synth 8-3848] Net o_debugled_0 in module/entity top does not have driver. [/home/zz/xilinx/frequency-divider/src/rtl/top.v:8]
+WARNING: [Synth 8-3848] Net o_tx_ch2_0 in module/entity top does not have driver. [/home/zz/xilinx/frequency-divider/src/rtl/top.v:15]
+WARNING: [Synth 8-3848] Net o_tx_ch2_1 in module/entity top does not have driver. [/home/zz/xilinx/frequency-divider/src/rtl/top.v:16]
+INFO: [Synth 8-6155] done synthesizing module 'top' (31#1) [/home/zz/xilinx/frequency-divider/src/rtl/top.v:1]
+WARNING: [Synth 8-7129] Port smg_p_out in module digitLed_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CLK in module xbip_pipe_v3_0_6_viv__parameterized15 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CE in module xbip_pipe_v3_0_6_viv__parameterized15 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SCLR in module xbip_pipe_v3_0_6_viv__parameterized15 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SSET in module xbip_pipe_v3_0_6_viv__parameterized15 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SINIT in module xbip_pipe_v3_0_6_viv__parameterized15 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CLK in module xbip_pipe_v3_0_6_viv__parameterized13 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CE in module xbip_pipe_v3_0_6_viv__parameterized13 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SCLR in module xbip_pipe_v3_0_6_viv__parameterized13 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SSET in module xbip_pipe_v3_0_6_viv__parameterized13 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SINIT in module xbip_pipe_v3_0_6_viv__parameterized13 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CLK in module xbip_pipe_v3_0_6_viv__parameterized11 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CE in module xbip_pipe_v3_0_6_viv__parameterized11 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SCLR in module xbip_pipe_v3_0_6_viv__parameterized11 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SSET in module xbip_pipe_v3_0_6_viv__parameterized11 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SINIT in module xbip_pipe_v3_0_6_viv__parameterized11 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SCLR in module sin_cos is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CLK in module xbip_pipe_v3_0_6_viv__parameterized9 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CE in module xbip_pipe_v3_0_6_viv__parameterized9 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SCLR in module xbip_pipe_v3_0_6_viv__parameterized9 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SSET in module xbip_pipe_v3_0_6_viv__parameterized9 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SINIT in module xbip_pipe_v3_0_6_viv__parameterized9 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SCLR in module xbip_pipe_v3_0_6_viv__parameterized7 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SSET in module xbip_pipe_v3_0_6_viv__parameterized7 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SINIT in module xbip_pipe_v3_0_6_viv__parameterized7 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CLK in module xbip_pipe_v3_0_6_viv__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CE in module xbip_pipe_v3_0_6_viv__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SCLR in module xbip_pipe_v3_0_6_viv__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SSET in module xbip_pipe_v3_0_6_viv__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SINIT in module xbip_pipe_v3_0_6_viv__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CLK in module xbip_pipe_v3_0_6_viv__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CE in module xbip_pipe_v3_0_6_viv__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SCLR in module xbip_pipe_v3_0_6_viv__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SSET in module xbip_pipe_v3_0_6_viv__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SINIT in module xbip_pipe_v3_0_6_viv__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port chan_addr[0] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port chan_addr_del2[0] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port chan_addr_del3[0] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[3] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[2] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[1] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[0] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port phase_inc_we in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port phase_adj_we in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port poff_in[19] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port poff_in[18] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port poff_in[17] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port poff_in[16] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port poff_in[15] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port poff_in[14] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port poff_in[13] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port poff_in[12] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port poff_in[11] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port poff_in[10] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port poff_in[9] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port poff_in[8] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port poff_in[7] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port poff_in[6] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port poff_in[5] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port poff_in[4] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port poff_in[3] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port poff_in[2] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port poff_in[1] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port poff_in[0] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_i[19] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_i[18] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_i[17] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_i[16] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_i[15] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_i[14] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_i[13] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_i[12] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_i[11] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_i[10] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_i[9] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_i[8] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_i[7] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_i[6] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_i[5] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_i[4] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_i[3] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_i[2] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_i[1] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_i[0] in module accum is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SCLR in module xbip_pipe_v3_0_6_viv__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SSET in module xbip_pipe_v3_0_6_viv__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SINIT in module xbip_pipe_v3_0_6_viv__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RFD in module dds_compiler_v6_0_21_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CHANNEL[0] in module dds_compiler_v6_0_21_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port COSINE[7] in module dds_compiler_v6_0_21_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port COSINE[6] in module dds_compiler_v6_0_21_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port COSINE[5] in module dds_compiler_v6_0_21_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port COSINE[4] in module dds_compiler_v6_0_21_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port COSINE[3] in module dds_compiler_v6_0_21_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port COSINE[2] in module dds_compiler_v6_0_21_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port COSINE[1] in module dds_compiler_v6_0_21_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port COSINE[0] in module dds_compiler_v6_0_21_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADDR[0] in module dds_compiler_v6_0_21_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port REG_SELECT in module dds_compiler_v6_0_21_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SCLR in module dds_compiler_v6_0_21_core is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2607.188 ; gain = 0.000 ; free physical = 388 ; free virtual = 4287
+Finished RTL Elaboration : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 2607.195 ; gain = 0.000 ; free physical = 1060 ; free virtual = 2012
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2607.188 ; gain = 0.000 ; free physical = 1248 ; free virtual = 5148
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2607.195 ; gain = 0.000 ; free physical = 1058 ; free virtual = 2012
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2607.188 ; gain = 0.000 ; free physical = 1248 ; free virtual = 5148
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2607.195 ; gain = 0.000 ; free physical = 1058 ; free virtual = 2012
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2607.188 ; gain = 0.000 ; free physical = 1264 ; free virtual = 5163
+Netlist sorting complete. Time (s): cpu = 00:00:00.34 ; elapsed = 00:00:00.33 . Memory (MB): peak = 2607.195 ; gain = 0.000 ; free physical = 1029 ; free virtual = 1984
+INFO: [Netlist 29-17] Analyzing 63 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
+Parsing XDC File [/home/zz/xilinx/frequency-divider/vivado/frequency-divider.srcs/sources_1/ip/fir_compiler_high/constraints/fir_compiler_v7_2.xdc] for cell 'fir_compiler_high_0/U0'
+Finished Parsing XDC File [/home/zz/xilinx/frequency-divider/vivado/frequency-divider.srcs/sources_1/ip/fir_compiler_high/constraints/fir_compiler_v7_2.xdc] for cell 'fir_compiler_high_0/U0'
+Parsing XDC File [/home/zz/xilinx/frequency-divider/vivado/frequency-divider.srcs/sources_1/ip/fir_compiler_low/constraints/fir_compiler_v7_2.xdc] for cell 'fir_compiler_low_0/U0'
+Finished Parsing XDC File [/home/zz/xilinx/frequency-divider/vivado/frequency-divider.srcs/sources_1/ip/fir_compiler_low/constraints/fir_compiler_v7_2.xdc] for cell 'fir_compiler_low_0/U0'
 Parsing XDC File [/home/zz/xilinx/frequency-divider/src/pin_con/ad9226_pin.xdc]
 Finished Parsing XDC File [/home/zz/xilinx/frequency-divider/src/pin_con/ad9226_pin.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/zz/xilinx/frequency-divider/src/pin_con/ad9226_pin.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
@@ -84,58 +398,56 @@ Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl
 Parsing XDC File [/home/zz/xilinx/frequency-divider/src/pin_con/startspeedup.xdc]
 Finished Parsing XDC File [/home/zz/xilinx/frequency-divider/src/pin_con/startspeedup.xdc]
 Parsing XDC File [/home/zz/xilinx/frequency-divider/src/pin_con/top_pins.xdc]
-WARNING: [Vivado 12-584] No ports matched 'spi_data_2_high_data'. [/home/zz/xilinx/frequency-divider/src/pin_con/top_pins.xdc:8]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/zz/xilinx/frequency-divider/src/pin_con/top_pins.xdc:8]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'rst_n_IBUF'. [/home/zz/xilinx/frequency-divider/src/pin_con/top_pins.xdc:55]
 Finished Parsing XDC File [/home/zz/xilinx/frequency-divider/src/pin_con/top_pins.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [/home/zz/xilinx/frequency-divider/src/pin_con/top_pins.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/top_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/zz/xilinx/frequency-divider/src/pin_con/top_pins.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/zz/xilinx/frequency-divider/vivado/frequency-divider.srcs/constrs_1/new/debug_chouse.xdc]
+Finished Parsing XDC File [/home/zz/xilinx/frequency-divider/vivado/frequency-divider.srcs/constrs_1/new/debug_chouse.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/zz/xilinx/frequency-divider/vivado/frequency-divider.srcs/constrs_1/new/debug_chouse.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/zz/xilinx/frequency-divider/vivado/frequency-divider.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/zz/xilinx/frequency-divider/vivado/frequency-divider.runs/synth_1/dont_touch.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/zz/xilinx/frequency-divider/vivado/frequency-divider.runs/synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2671.156 ; gain = 0.000 ; free physical = 1230 ; free virtual = 5129
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2742.973 ; gain = 0.000 ; free physical = 925 ; free virtual = 1899
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2671.156 ; gain = 0.000 ; free physical = 1230 ; free virtual = 5129
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.11 . Memory (MB): peak = 2742.973 ; gain = 0.000 ; free physical = 925 ; free virtual = 1899
 WARNING: [Designutils 20-4072] Reference run did not run incremental synthesis because the design is too small; reverting to default synthesis
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2671.156 ; gain = 63.969 ; free physical = 1290 ; free virtual = 5189
+Finished Constraint Validation : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 2742.973 ; gain = 135.777 ; free physical = 1033 ; free virtual = 2014
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2671.156 ; gain = 63.969 ; free physical = 1290 ; free virtual = 5189
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 2742.973 ; gain = 135.777 ; free physical = 1033 ; free virtual = 2014
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for fir_compiler_high_0/U0. (constraint file  /home/zz/xilinx/frequency-divider/vivado/frequency-divider.runs/synth_1/dont_touch.xdc, line 24).
+Applied set_property KEEP_HIERARCHY = SOFT for fir_compiler_low_0/U0. (constraint file  /home/zz/xilinx/frequency-divider/vivado/frequency-divider.runs/synth_1/dont_touch.xdc, line 27).
+Applied set_property KEEP_HIERARCHY = SOFT for fir_compiler_high_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for fir_compiler_low_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for dds_compiler_2k_0_test. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2671.156 ; gain = 63.969 ; free physical = 1293 ; free virtual = 5192
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 2742.973 ; gain = 135.777 ; free physical = 1033 ; free virtual = 2014
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-327] inferring latch for variable 'SPI_CLK_reg' [/home/zz/xilinx/frequency-divider/src/rtl/spi/spi_master.v:12]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2671.156 ; gain = 63.969 ; free physical = 1285 ; free virtual = 5185
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 2742.973 ; gain = 135.777 ; free physical = 1009 ; free virtual = 1997
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input   32 Bit       Adders := 1     
-	   2 Input    5 Bit       Adders := 2     
-+---Registers : 
-	               32 Bit    Registers := 1     
-	               13 Bit    Registers := 1     
-	                5 Bit    Registers := 2     
-	                1 Bit    Registers := 10    
-+---Muxes : 
-	   2 Input   32 Bit        Muxes := 1     
-	  11 Input    5 Bit        Muxes := 2     
-	   2 Input    1 Bit        Muxes := 5     
-	   3 Input    1 Bit        Muxes := 1     
-	  11 Input    1 Bit        Muxes := 4     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -152,38 +464,26 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-WARNING: [Synth 8-7129] Port i_da9226_data_1[12] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port i_da9226_data_1[11] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port i_da9226_data_1[10] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port i_da9226_data_1[9] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port i_da9226_data_1[8] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port i_da9226_data_1[7] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port i_da9226_data_1[6] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port i_da9226_data_1[5] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port i_da9226_data_1[4] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port i_da9226_data_1[3] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port i_da9226_data_1[2] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port i_da9226_data_1[1] in module top is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2671.156 ; gain = 63.969 ; free physical = 1271 ; free virtual = 5175
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:57 ; elapsed = 00:00:58 . Memory (MB): peak = 2742.973 ; gain = 135.777 ; free physical = 974 ; free virtual = 1976
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2671.156 ; gain = 63.969 ; free physical = 1151 ; free virtual = 5054
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:03 ; elapsed = 00:01:04 . Memory (MB): peak = 2742.973 ; gain = 135.777 ; free physical = 831 ; free virtual = 1840
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2671.156 ; gain = 63.969 ; free physical = 1151 ; free virtual = 5054
+Finished Timing Optimization : Time (s): cpu = 00:01:04 ; elapsed = 00:01:04 . Memory (MB): peak = 2742.973 ; gain = 135.777 ; free physical = 827 ; free virtual = 1836
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2671.156 ; gain = 63.969 ; free physical = 1149 ; free virtual = 5052
+Finished Technology Mapping : Time (s): cpu = 00:01:05 ; elapsed = 00:01:06 . Memory (MB): peak = 2742.973 ; gain = 135.777 ; free physical = 823 ; free virtual = 1832
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -201,37 +501,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2671.156 ; gain = 63.969 ; free physical = 1149 ; free virtual = 5052
+Finished IO Insertion : Time (s): cpu = 00:01:08 ; elapsed = 00:01:09 . Memory (MB): peak = 2742.973 ; gain = 135.777 ; free physical = 822 ; free virtual = 1832
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2671.156 ; gain = 63.969 ; free physical = 1149 ; free virtual = 5052
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:08 ; elapsed = 00:01:09 . Memory (MB): peak = 2742.973 ; gain = 135.777 ; free physical = 822 ; free virtual = 1832
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2671.156 ; gain = 63.969 ; free physical = 1149 ; free virtual = 5052
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:09 ; elapsed = 00:01:09 . Memory (MB): peak = 2742.973 ; gain = 135.777 ; free physical = 822 ; free virtual = 1832
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2671.156 ; gain = 63.969 ; free physical = 1149 ; free virtual = 5052
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:09 ; elapsed = 00:01:09 . Memory (MB): peak = 2742.973 ; gain = 135.777 ; free physical = 822 ; free virtual = 1832
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2671.156 ; gain = 63.969 ; free physical = 1149 ; free virtual = 5052
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:09 ; elapsed = 00:01:10 . Memory (MB): peak = 2742.973 ; gain = 135.777 ; free physical = 822 ; free virtual = 1832
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2671.156 ; gain = 63.969 ; free physical = 1149 ; free virtual = 5052
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:09 ; elapsed = 00:01:10 . Memory (MB): peak = 2742.973 ; gain = 135.777 ; free physical = 822 ; free virtual = 1832
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -244,45 +544,51 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+-------+------+
-|      |Cell   |Count |
-+------+-------+------+
-|1     |BUFG   |     2|
-|2     |CARRY4 |    15|
-|3     |LUT1   |     2|
-|4     |LUT2   |    14|
-|5     |LUT3   |     8|
-|6     |LUT4   |    15|
-|7     |LUT5   |    44|
-|8     |LUT6   |     8|
-|9     |FDCE   |    63|
-|10    |FDPE   |     2|
-|11    |FDRE   |    10|
-|12    |IBUF   |     3|
-|13    |OBUF   |    10|
-+------+-------+------+
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     3|
+|2     |CARRY4   |    33|
+|3     |DSP48E1  |    63|
+|4     |LUT1     |    15|
+|5     |LUT2     |    40|
+|6     |LUT3     |    24|
+|7     |LUT4     |    28|
+|8     |LUT5     |    53|
+|9     |LUT6     |    59|
+|10    |MUXF7    |     5|
+|11    |RAMB18E1 |     1|
+|12    |SRL16E   |  1140|
+|13    |SRLC32E  |   375|
+|14    |FDCE     |   126|
+|15    |FDRE     |  2423|
+|16    |LD       |     1|
+|17    |IBUF     |    17|
+|18    |OBUF     |    20|
+|19    |OBUFT    |     4|
++------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2671.156 ; gain = 63.969 ; free physical = 1149 ; free virtual = 5052
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:09 ; elapsed = 00:01:10 . Memory (MB): peak = 2742.973 ; gain = 135.777 ; free physical = 822 ; free virtual = 1832
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 13 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2671.156 ; gain = 0.000 ; free physical = 1200 ; free virtual = 5104
-Synthesis Optimization Complete : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2671.156 ; gain = 63.969 ; free physical = 1200 ; free virtual = 5104
+Synthesis finished with 0 errors, 0 critical warnings and 1304 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:03 ; elapsed = 00:01:04 . Memory (MB): peak = 2742.973 ; gain = 0.000 ; free physical = 885 ; free virtual = 1895
+Synthesis Optimization Complete : Time (s): cpu = 00:01:09 ; elapsed = 00:01:10 . Memory (MB): peak = 2742.973 ; gain = 135.777 ; free physical = 885 ; free virtual = 1895
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2671.156 ; gain = 0.000 ; free physical = 1290 ; free virtual = 5194
-INFO: [Netlist 29-17] Analyzing 15 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.13 . Memory (MB): peak = 2742.973 ; gain = 0.000 ; free physical = 968 ; free virtual = 1986
+INFO: [Netlist 29-17] Analyzing 103 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2671.156 ; gain = 0.000 ; free physical = 1227 ; free virtual = 5131
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2742.973 ; gain = 0.000 ; free physical = 901 ; free virtual = 1919
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 1 instances were transformed.
+  LD => LDCE: 1 instance 
 
-Synth Design complete, checksum: 54f295ef
+Synth Design complete, checksum: 51069760
 INFO: [Common 17-83] Releasing license: Synthesis
-37 Infos, 29 Warnings, 1 Critical Warnings and 0 Errors encountered.
+51 Infos, 130 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:21 . Memory (MB): peak = 2671.156 ; gain = 64.031 ; free physical = 1433 ; free virtual = 5336
-INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+synth_design: Time (s): cpu = 00:01:19 ; elapsed = 00:01:15 . Memory (MB): peak = 2742.973 ; gain = 135.844 ; free physical = 1106 ; free virtual = 2124
 INFO: [Common 17-1381] The checkpoint '/home/zz/xilinx/frequency-divider/vivado/frequency-divider.runs/synth_1/top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Oct 26 07:25:29 2022...
+INFO: [Common 17-206] Exiting Vivado at Sun Oct 30 22:23:00 2022...

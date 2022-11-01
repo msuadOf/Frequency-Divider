@@ -1,0 +1,5 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/zz/xilinx/frequency-divider/vivado/frequency-divider.ip_user_files/ip/fir_compiler_high/demo_tb/tb_fir_compiler_high.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_fir_compiler_high'
+ERROR: [VRFC 10-2987] 'fir_compiler_high' is not compiled in library 'xil_defaultlib' [/home/zz/xilinx/frequency-divider/vivado/frequency-divider.ip_user_files/ip/fir_compiler_high/demo_tb/tb_fir_compiler_high.vhd:121]
+ERROR: [VRFC 10-3782] unit 'tb' ignored due to previous errors [/home/zz/xilinx/frequency-divider/vivado/frequency-divider.ip_user_files/ip/fir_compiler_high/demo_tb/tb_fir_compiler_high.vhd:76]
+INFO: [VRFC 10-3070] VHDL file '/home/zz/xilinx/frequency-divider/vivado/frequency-divider.ip_user_files/ip/fir_compiler_high/demo_tb/tb_fir_compiler_high.vhd' ignored due to errors

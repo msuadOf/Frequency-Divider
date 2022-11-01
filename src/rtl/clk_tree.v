@@ -25,7 +25,7 @@ clk_div clk_277Hz(
 //clk_1100kHz
 clk_div clk_1100kHz(
     .clk(sys_clk),
-    .div_n(90-1), //277.7kHz*4 for ad9226
+    .div_n(180-1), //277.7kHz*4 for ad9226
     .rst_n(sys_rst_n),
     .clk_out(o_clk_1100kHz)
 );

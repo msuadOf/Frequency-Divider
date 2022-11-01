@@ -1,109 +1,137 @@
 module top (
-    i_da9226_data_1,
-    rst_n,
-    o_ad9226_clk_driver,
-    o_cs_0,
-    o_cs_1,
-    o_debugled_0,
-    o_sck_0,
-    o_sck_1,
-    o_tx_ch1_0,
-    o_tx_ch1_1,
-    o_tx_ch2_0,
-    o_tx_ch2_1,
-    clk
+    input              clk,
+    input              rst_n,
+    input  wire [12:0] i_da9226_data,
+    output wire        o_ad9226_clk_driver,
+    output wire        o_cs_0,
+    output wire        o_cs_1,
+    output wire        o_debugled_0,
+    output wire        o_debugled_1,
+    output wire        o_debugled_2,
+    output wire        o_sck_0,
+    output wire        o_sck_1,
+    output wire        o_tx_ch1_0,
+    output wire        o_tx_ch1_1,
+    output wire        o_tx_ch2_0,
+    output wire        o_tx_ch2_1,
+
+    output wire [7-1:0] smg_7_out,
+    output wire [  3:0] smg_4_out,
+    output              smg_p_out,
+
+    input [2:0] debug_chouse
+
 );
 
-  input [12:0] i_da9226_data_1;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.rst_n RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.rst_n, INSERT_VIP 0, POLARITY ACTIVE_LOW" *) input rst_n;
-  output o_ad9226_clk_driver;
-  output o_cs_0;
-  output o_cs_1;
-  output o_debugled_0;
-  output o_sck_0;
-  output o_sck_1;
-  output o_tx_ch1_0;
-  output o_tx_ch1_1;
-  output o_tx_ch2_0;
-  output o_tx_ch2_1;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.clk, CLK_DOMAIN clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) input clk;
+  wire clk_5MHz;
+  wire clk_1100kHz;
+  wire clk_277kHz;
 
-  wire        Net;
-  wire        Net1;
-  wire [11:0] ad_9226_0_ADC_Data;
-  wire        ad_9226_0_o_clk_driver;
-  wire        clk_tree_0_o_clk_1100kHz;
-  wire        clk_tree_0_o_clk_277kHz;
-  wire        filter_wraper_0_o_debugled;
-  wire [15:0] filter_wraper_0_o_hpf_16bit;
-  wire [15:0] filter_wraper_0_o_lpf_16bit;
-  wire [12:0] i_da9226_data_1_1;
-  wire        rst_n_1;
-  wire        spi_master_0_o_cs;
-  wire        spi_master_0_o_sck;
-  wire        spi_master_0_o_tx_ch1;
-  wire        spi_master_0_o_tx_ch2;
-  wire        spi_master_1_o_cs;
-  wire        spi_master_1_o_sck;
-  wire        spi_master_1_o_tx_ch1;
-  wire        spi_master_1_o_tx_ch2;
-  wire        clk_1;
+  clk_tree clk_tree (
+      .sys_clk      (clk),         //100Mhz
+      .sys_rst_n    (rst_n),
+      .o_clk_5MHz   (clk_5MHz),
+      .o_clk_277kHz (clk_277kHz),
+      .o_clk_1100kHz(clk_1100kHz)
+  );
 
-  assign i_da9226_data_1_1 = i_da9226_data_1[12:0];
-  assign rst_n_1       = rst_n;
-  assign o_ad9226_clk_driver    = ad_9226_0_o_clk_driver;
-  assign o_cs_0            = spi_master_0_o_cs;
-  assign o_cs_1            = spi_master_1_o_cs;
-  assign o_debugled_0      = filter_wraper_0_o_debugled;
-  assign o_sck_0           = spi_master_0_o_sck;
-  assign o_sck_1           = spi_master_1_o_sck;
-  assign o_tx_ch1_0        = spi_master_0_o_tx_ch1;
-  assign o_tx_ch1_1        = spi_master_1_o_tx_ch1;
-  assign o_tx_ch2_0        = spi_master_0_o_tx_ch2;
-  assign o_tx_ch2_1        = spi_master_1_o_tx_ch2;
-  assign clk_1       = clk;
-  ad_9226 ad_9226_0 (
-      .ADC_Data     (ad_9226_0_ADC_Data),
-      .i_da9226_data(i_da9226_data_1_1),
-      .o_clk_driver (ad_9226_0_o_clk_driver),
-      .sys_clk      (clk_tree_0_o_clk_1100kHz),
-      .sys_rst_n    (Net1)
+  wire [12-1:0] ad9226_filter_12_data;
+  ad_9226 ad_9226 (
+      .sys_clk  (clk_1100kHz),
+      .sys_rst_n(rst_n),
+
+      .o_clk_driver (o_ad9226_clk_driver),
+      .i_da9226_data(i_da9226_data),
+
+      .ADC_Data(ad9226_filter_12_data)
+
   );
-  clk_tree clk_tree_0 (
-      .o_clk_1100kHz(clk_tree_0_o_clk_1100kHz),
-      .o_clk_277kHz (clk_tree_0_o_clk_277kHz),
-      .o_clk_5MHz   (Net),
-      .sys_clk      (clk_1),
-      .sys_rst_n    (Net1)
+  wire [16-1:0] filter_spiH_16_hpfdata;
+  wire [16-1:0] filter_spiL_16_lpfdata;
+  wire [31:0] filter_spiH_hpfdata;
+  wire [39:0] filter_spiL_lpfdata;
+
+wire [39:0] fir_data_tdata_high;
+fir_compiler_high fir_compiler_high_0 (
+  .aclk(clk_277kHz),                              // input wire aclk
+  .s_axis_data_tvalid(1),  // input wire s_axis_data_tvalid
+//  .s_axis_data_tready(s_axis_data_tready),  // output wire s_axis_data_tready
+  .s_axis_data_tdata(debug_chouse[2]?{dds_test_data,8'b0}:{~ad9226_filter_12_data[11],ad9226_filter_12_data[10:0],4'b0}),    // input wire [15 : 0] s_axis_data_tdata
+//  .s_axis_data_tdata({~ad9226_filter_12_data[11],ad9226_filter_12_data[10:0],4'b0}),    // input wire [15 : 0] s_axis_data_tdata
+//  .m_axis_data_tvalid(m_axis_data_tvalid),  // output wire m_axis_data_tvalid
+  .m_axis_data_tdata(fir_data_tdata_high)    // output wire [39 : 0] m_axis_data_tdata
+);
+wire [39:0] fir_data_tdata_low;
+fir_compiler_low fir_compiler_low_0 (
+  .aclk(clk_277kHz),                              // input wire aclk
+  .s_axis_data_tvalid(1),  // input wire s_axis_data_tvalid
+//  .s_axis_data_tready(s_axis_data_tready),  // output wire s_axis_data_tready
+  .s_axis_data_tdata({~ad9226_filter_12_data[11],ad9226_filter_12_data[10:0],4'b0}),    // input wire [15 : 0] s_axis_data_tdata
+//  .m_axis_data_tvalid(m_axis_data_tvalid),  // output wire m_axis_data_tvalid
+  .m_axis_data_tdata(fir_data_tdata_low)    // output wire [39 : 0] m_axis_data_tdata
+);
+
+//fir_compiler_high_150_in277777_2000 fir1 (
+//  .aclk(clk_277kHz),                              // input wire aclk
+//  .s_axis_data_tvalid(1),  // input wire s_axis_data_tvalid
+////  .s_axis_data_tready(s_axis_data_tready),  // output wire s_axis_data_tready
+//  .s_axis_data_tdata(ad9226_filter_12signed_data),    // input wire [15 : 0] s_axis_data_tdata
+////  .m_axis_data_tvalid(m_axis_data_tvalid),  // output wire m_axis_data_tvalid
+//  .m_axis_data_tdata(filter_spiH_hpfdata)    // output wire [31 : 0] m_axis_data_tdata
+//);
+//fir_compiler_low_150_in277777_2000 fir2 (
+//  .aclk(clk_277kHz),                              // input wire aclk
+//  .s_axis_data_tvalid(1),  // input wire s_axis_data_tvalid
+////  .s_axis_data_tready(s_axis_data_tready),  // output wire s_axis_data_tready
+//  .s_axis_data_tdata(ad9226_filter_12_data),    // input wire [15 : 0] s_axis_data_tdata
+////  .m_axis_data_tvalid(m_axis_data_tvalid),  // output wire m_axis_data_tvalid
+//  .m_axis_data_tdata(filter_spiL_lpfdata)    // output wire [39 : 0] m_axis_data_tdata
+//);
+
+wire [7:0] dds_test_data;
+dds_compiler_2k dds_compiler_2k_0_test (
+  .aclk(clk_277kHz),                              // input wire aclk
+  .m_axis_data_tdata(dds_test_data)    // output wire [7 : 0] m_axis_data_tdata
+);
+
+
+assign filter_spiH_16_hpfdata=(debug_chouse[0])? ((debug_chouse[1])?{ad9226_filter_12_data,4'b0}:{~dds_test_data[7],dds_test_data[6:0],8'b0}):((debug_chouse[1])?{~fir_data_tdata_low[39],fir_data_tdata_low[38:24]}:{~fir_data_tdata_high[39],fir_data_tdata_high[38:24]});
+
+//assign filter_spiH_16_hpfdata={~fir_data_tdata_high[39],fir_data_tdata_high[38:24]};
+assign filter_spiL_16_lpfdata={~fir_data_tdata_low[39],fir_data_tdata_low[38:24]};
+//assign filter_spiH_16_hpfdata={~dds_test_data[7],dds_test_data[6:0],8'b0};
+//assign filter_spiH_16_hpfdata={ad9226_filter_12_data,4'b0};
+//assign filter_spiL_16_lpfdata={~fir_data_tdata_high[39],fir_data_tdata_high[38:24]};
+//assign filter_spiH_16_hpfdata={~fir_data_tdata_low[39],fir_data_tdata_low[38:24]};
+
+
+  spi_master spiH (
+      .SPI_TX_module_clk(clk_5MHz),
+      .data_transmit    (filter_spiH_16_hpfdata[16-1:9-1]),
+      .transmit_enable  (rst_n),
+      .SPI_TX           (o_tx_ch1_0),
+      .SPI_CLK          (o_sck_0),
+      .SPI_CS           (o_cs_0)
   );
-  connect connect_0 (
-      .i_rst_n(rst_n_1),
-      .o_rst_n(Net1)
+
+  spi_master spiL (
+      .SPI_TX_module_clk(clk_5MHz),
+      .data_transmit    (filter_spiL_16_lpfdata[16-1:9-1]),
+      .transmit_enable  (rst_n),
+      .SPI_TX           (o_tx_ch1_1),
+      .SPI_CLK          (o_sck_1),
+      .SPI_CS           (o_cs_1)
   );
-  filter_wraper filter_wraper_0 (
-      .i_filter_datain(ad_9226_0_ADC_Data),
-      .o_debugled     (filter_wraper_0_o_debugled),
-      .o_hpf_16bit    (filter_wraper_0_o_hpf_16bit),
-      .o_lpf_16bit    (filter_wraper_0_o_lpf_16bit),
-      .sys_clk        (clk_tree_0_o_clk_277kHz),
-      .sys_rst_n      (Net1)
+
+  digitLed_top digitLed_top (
+      clk,
+      rst_n,
+      {ad9226_filter_12_data, 4'b0},
+      smg_7_out,
+      smg_4_out,
+      smg_p_out
   );
-  spi_master spi_master_0 (
-      .i_send_data(filter_wraper_0_o_hpf_16bit),
-      .o_cs       (spi_master_0_o_cs),
-      .o_sck      (spi_master_0_o_sck),
-      .o_tx_ch1   (spi_master_0_o_tx_ch1),
-      .o_tx_ch2   (spi_master_0_o_tx_ch2),
-      .sys_clk    (Net),
-      .sys_rst_n  (Net1)
-  );
-  spi_master spi_master_1 (
-      .i_send_data(filter_wraper_0_o_lpf_16bit),
-      .o_cs       (spi_master_1_o_cs),
-      .o_sck      (spi_master_1_o_sck),
-      .o_tx_ch1   (spi_master_1_o_tx_ch1),
-      .o_tx_ch2   (spi_master_1_o_tx_ch2),
-      .sys_clk    (Net),
-      .sys_rst_n  (Net1)
-  );
+
+  assign o_debugled_1 = clk_5MHz;
+  assign o_debugled_2 = o_sck_0;
 endmodule

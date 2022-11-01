@@ -29,7 +29,7 @@ module ad9226_driver (
 
     output reg [12:0] ADC_Data
 );
-wire IO_data=i_da9226_data;
+
   `define clkOutPeriod 4		//模块驱动时钟分频，clk_driver = clk/4 = 260M/4 = 65M
   reg [31:0] clkCnt;
   always @(posedge sys_clk or negedge sys_rst_n)
@@ -46,7 +46,7 @@ wire IO_data=i_da9226_data;
       ADC_Data   <= 13'd0;
     end else if (clkCnt == `clkOutPeriod / 2 - 1) begin
       o_clk_driver <= 1'd1;
-      ADC_Data   <= IO_data;
+      ADC_Data   <= i_da9226_data;
     end else if (clkCnt == `clkOutPeriod - 1) begin
       o_clk_driver <= 1'd0;
       ADC_Data   <= ADC_Data;
